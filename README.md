@@ -23,3 +23,7 @@
     - Icons: [devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Syntax Highlighting: [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (LSP will be added later)
 - Search: [telescope](https://github.com/nvim-telescope/telescope.nvim)
+
+### Mappings
+- Open tree: <ctrl+n>
+- Open search: <ctrl+p>
