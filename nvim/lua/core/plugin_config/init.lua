@@ -1,3 +1,5 @@
-require("lua.core.plugin_config.lualine")
-require("lua.core.plugin_config.nordic")
-require("lua.core.plugin_config.nvim-tree")
+require("core.plugin_config.lualine")
+require("core.plugin_config.nordic")
+require("core.plugin_config.nvim-tree")
+require("core.plugin_config.telescope")
+require("core.plugin_config.treesitter")
