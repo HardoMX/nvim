@@ -3,7 +3,7 @@
 ### Features:
 - (Soon) Lazyloading for fast startup
 - Nice-looking (Nordic theme)
-- A complete, but pretty simple package, whith an easy (soon^tm^) to read/use directory system
+- A complete, but pretty simple package, whith an easy (soon<sup>tm</sup>) to read/use directory system
 
 ---
 
