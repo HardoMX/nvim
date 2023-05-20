@@ -1,9 +1,8 @@
 # Hardo's neovim config; "hvim"
 
 ### Features:
-- Lightweight
 - (Soon) Lazyloading for fast startup
-- Nice-looking
+- Nice-looking (Nordic theme)
 
 ---
 

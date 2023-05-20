@@ -25,3 +25,4 @@ vim.opt.laststatus = 2
 vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.title = true
+vim.opt.wildmenu = true
