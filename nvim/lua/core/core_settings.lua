@@ -17,7 +17,6 @@ vim.opt.encoding = 'utf-8'
 vim.opt.linebreak = true
 vim.opt.scrolloff = 3
 vim.opt.wrap = true
-vim.opt.foldmethod = 'indent'
 vim.opt.spell = true
 
 -- Other Vim settings
