@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use 'm4xshen/autoclose.nvim'
   use 'jghauser/mkdir.nvim'
   use 'shellRaining/hlchunk.nvim'
-  use 'NvChad/nvim-colorizer'
+  use 'NvChad/nvim-colorizer.lua'
   use 'sitiom/nvim-numbertoggle'
   use 'RRethy/vim-illuminate'
   use {
@@ -41,6 +41,8 @@ return require('packer').startup(function(use)
   }
   use 'gelguy/wilder.nvim'
   use 'folke/which-key.nvim'
+  use 'numToStr/FTerm.nvim'
+  use 'moll/vim-bbye'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
