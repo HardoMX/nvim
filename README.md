@@ -47,4 +47,4 @@
 - Previous Tab: <shift+b>
 - Close current Tab: <shift+g>
 - Open Terminal: <Enter+Enter>
-- Close Terminal: <Esc>, but easier to jsut type `exit` in the terminal window
+- Close Terminal: <Esc>, but easier to just type `exit` in the terminal window
