@@ -1,4 +1,4 @@
-require("GUI.nordic")
+require("GUI.theme")
 require("GUI.lualine")
 require("GUI.noice")
 require("GUI.tabline")

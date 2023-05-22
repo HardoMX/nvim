@@ -14,6 +14,12 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'AlexvZyl/nordic.nvim'
+  use { 'catppuccin/nvim", as = "catppuccin' }
+  use 'rebelot/kanagawa.nvim'
+  use 'jacoborus/tender.vim'
+  use {'nyoom-engineering/oxocarbon.nvim'}
+  use 'rmehri01/onenord.nvim'
+  use 'folke/tokyonight.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'

@@ -34,6 +34,14 @@ require('illuminate').configure({
     min_count_to_highlight = 1,
 })
 
-vim.cmd("hi IlluminatedWordText cterm=bold gui=bold guifg=#d08770 guibg=#324d67")
-vim.cmd("hi IlluminatedWordRead cterm=bold gui=bold guifg=#d08770 guibg=#324d67")
-vim.cmd("hi IlluminatedWordWrite cterm=bold gui=bold guifg=#d08770 guibg=#324d67")
+--Nordic colors
+local ncFG = 'd08770' --#d08770
+local ncBG = '324d67' --#324d67
+
+--Tokyonight Colors
+local tnnFG = 'ff7d66' --#ff7d66
+local tnnBG = '37354b' --#37354b
+
+vim.cmd("hi IlluminatedWordText cterm=bold gui=bold guifg=#ff7d66 guibg=#37354b")
+vim.cmd("hi IlluminatedWordRead cterm=bold gui=bold guifg=#ff7d66 guibg=#37354b")
+vim.cmd("hi IlluminatedWordWrite cterm=bold gui=bold guifg=#ff7d66 guibg=#37354b")
