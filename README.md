@@ -17,7 +17,13 @@
 
 ### Plugins used
 - Manager: [nvim.packer](https://github.com/wbthomason/packer.nvim)
-- Colorscheme: [Nordic](https://github.com/AlexvZyl/nordic.nvim)
+- Colorschemes: - [Nordic](https://github.com/AlexvZyl/nordic.nvim)
+                - [Tokyonight](https://github.com/folke/tokyonight.nvim)
+                - [onenord](https://github.com/rmehri01/onenord.nvim)
+                - [oxocarbon](https://github.com/nyoom-engineering/oxocarbon.nvim)
+                - [tender](https://github.com/jacoborus/tender.vim)
+                - [kanagawa](https://github.com/rebelot/kanagawa.nvim)
+                - [Catpuccin](https://github.com/rebelot/kanagawa.nvim)
 - Statusline: [lualine](https://github.com/nvim-lualine/lualine.nvim)
 - File Explorer: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
     - Icons: [devicons](https://github.com/nvim-tree/nvim-web-devicons)
@@ -46,6 +52,7 @@
 ### Mappings
 - Open tree: <ctrl+n>
 - Open search: <ctrl+p>
+- Choose Colorscheme: <space+t>
 - Next Tab: <shift+t>
 - Previous Tab: <shift+b>
 - Close current Tab: <shift+g>
