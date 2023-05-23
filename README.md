@@ -1,7 +1,7 @@
 # Hardo's neovim config; "hvim"
 
 ### Features:
-- (Soon) Lazyloading for fast startup
+- Around one second startup or less
 - Nice-looking (Nordic theme)
 - A complete, but pretty simple package, whith an easy (soon<sup>tm</sup>) to read/use structure
 
@@ -62,3 +62,14 @@
 - Close current Tab: <shift+g>
 - Open Terminal: <Enter+Enter>
 - Close Terminal: <Esc>, but easier to just type `exit` in the terminal window
+
+---
+
+### Plans
+- No LazyLoading, one second is still fast and then there will be less wait for plugins when you use them. However, if the config becomes bigger I might change this
+- More Colorschemes
+- LSP
+- DAP
+- Autocompletion
+- Snippets
+- "Code Moving"
