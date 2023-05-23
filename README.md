@@ -1,7 +1,3 @@
-# NEW CONFIG FILES [here](https://github.com/HardoMX/nvim)
-
----
-
 # Hardo's neovim config; "hvim"
 
 ### Features:
@@ -12,10 +8,9 @@
 ---
 
 ### Installation:
-1. Clone the repository
-2. Copy the nvim folder int your ~/.config folder
+1. Clone the repository into your `.config` directory
+2. Start nvim with the `nvim` command
 3. There might be errors, but just run `:PackerInstall`, and everything should work
-4. That's all (right now)
 
 ---
 
