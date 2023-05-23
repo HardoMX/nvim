@@ -35,13 +35,13 @@ require('illuminate').configure({
 })
 
 --Nordic colors
-local ncFG = 'd08770' --#d08770
-local ncBG = '324d67' --#324d67
+local ncFG = '#d08770' --#d08770
+local ncBG = '#324d67' --#324d67
 
 --Tokyonight Colors
-local tnnFG = 'ff7d66' --#ff7d66
-local tnnBG = '37354b' --#37354b
+local tnnFG = '#ff7d66' --#ff7d66
+local tnnBG = '#37354b' --#37354b
 
-vim.cmd("hi IlluminatedWordText cterm=bold gui=bold guifg=#ff7d66 guibg=#37354b")
-vim.cmd("hi IlluminatedWordRead cterm=bold gui=bold guifg=#ff7d66 guibg=#37354b")
-vim.cmd("hi IlluminatedWordWrite cterm=bold gui=bold guifg=#ff7d66 guibg=#37354b")
+vim.cmd("hi IlluminatedWordText cterm=bold gui=bold guifg=tnnFG guibg=tnnBG")
+vim.cmd("hi IlluminatedWordRead cterm=bold gui=bold guifg=tnnFG guibg=tnnBG")
+vim.cmd("hi IlluminatedWordWrite cterm=bold gui=bold guifg=tnnFG guibg=tnnBG")
