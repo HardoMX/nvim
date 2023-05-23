@@ -34,14 +34,32 @@ require('illuminate').configure({
     min_count_to_highlight = 1,
 })
 
+local hl = require('GUI.theme').hl_theme
+
 --Nordic colors
-local ncFG = '#d08770' --#d08770
-local ncBG = '#324d67' --#324d67
+local ncFG = '#d08770'
+local ncBG = '#324d67'
 
---Tokyonight Colors
-local tnnFG = '#ff7d66' --#ff7d66
-local tnnBG = '#37354b' --#37354b
+--Tokyonight colors
+local tnnFG = '#ff7d66'
+local tnnBG = '#37354b'
 
-vim.cmd("hi IlluminatedWordText cterm=bold gui=bold guifg=tnnFG guibg=tnnBG")
-vim.cmd("hi IlluminatedWordRead cterm=bold gui=bold guifg=tnnFG guibg=tnnBG")
-vim.cmd("hi IlluminatedWordWrite cterm=bold gui=bold guifg=tnnFG guibg=tnnBG")
+--Error colors
+local errFG = '#ffffff'
+local errBG = '#ff0000'
+
+if hl == "tokyo-night" then
+        vim.api.nvim_set_hl(0, 'IlluminatedWordText', { fg = tnnFG, bg = tnnBG})
+        vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { fg = tnnFG, bg = tnnBG})
+        vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { fg = tnnFG, bg = tnnBG})
+
+elseif hl == "nordic" then
+        vim.api.nvim_set_hl(0, 'IlluminatedWordText', { fg = ncFG, bg = ncBG})
+        vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { fg = ncFG, bg = ncBG})
+        vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { fg = ncFG, bg = ncBG})
+
+else
+    vim.api.nvim_set_hl(0, 'IlluminatedWordText', {fg = errFG, bg = errBG})
+    vim.api.nvim_set_hl(0, 'IlluminatedWordRead', {fg = errFG, bg = errBG})
+    vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', {fg = errFG, bg = errBG})
+end
