@@ -12,6 +12,10 @@
 2. Start nvim with the `nvim` command
 3. There might be errors, but just run `:PackerInstall`, and everything should work
 
+**Notes**
+- The README and LICENSE will also be in this repository, you could remove them if you want, but they shouldn't create any problems
+- The reason I am doing it like this is that it will be mush easier to update the config, I can just change something and push it, without having to copy stuff to or from a folder
+
 ---
 
 ### Plugins used
