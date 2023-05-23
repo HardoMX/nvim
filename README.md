@@ -1,3 +1,7 @@
+#NEW CONFIG FILES AT [here](https://github.com/HardoMX/nvim)
+
+---
+
 # Hardo's neovim config; "hvim"
 
 ### Features:
