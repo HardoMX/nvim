@@ -28,7 +28,7 @@
         - [context](https://github.com/nvim-treesitter/nvim-treesitter-context) (No Config)
   
 - **GUI**
-    - Colorschemes: 
+    - Colorschemes: (Configs are in theme.lua)
         - [Nordic](https://github.com/AlexvZyl/nordic.nvim)
         - [Tokyonight](https://github.com/folke/tokyonight.nvim)
         - [onenord](https://github.com/rmehri01/onenord.nvim)
@@ -36,8 +36,7 @@
         - [tender](https://github.com/jacoborus/tender.vim)
         - [kanagawa](https://github.com/rebelot/kanagawa.nvim)
         - [Catpuccin](https://github.com/rebelot/kanagawa.nvim) (Currently broken)
-    - Statusline: [lualine](https://github.com/nvim-lualine/lualine.nvim)
-    - Color-"picker": [colorizer](https://github.com/NvChad/nvim-colorizer.lua)
+    - Statusline: [lualine](https://github.com/nvim-lualine/lualine.nvim) (No Config)
     - Indent and Chunk Highlighting: [hl-chunks](https://github.com/shellRaining/hlchunk.nvim)
     - Regex Help(Maybe broken): [regexplainer](https://github.com/bennypowers/nvim-regexplainer)
     - Tabs: [tabline](https://github.com/kdheepak/tabline.nvim)
@@ -54,6 +53,8 @@
     - [tabout](https://github.com/abecodes/tabout.nvim), Use tab to get out of (), {}, and more
     - [autoclose](https://github.com/m4xshen/autoclose.nvim), Automatically closes (), {}, and more
     - [Which-Key](https://github.com/folke/which-key.nvim), Shows available keymaps
+    - [colorizer](https://github.com/NvChad/nvim-colorizer.lua)
+
 
 
 
