@@ -56,7 +56,7 @@
     - [colorizer](https://github.com/NvChad/nvim-colorizer.lua), Shows what color a color code is
     - [trouble](https://github.com/folke/trouble.nvim), Inline errors and more
 
-- #### **LSP**
+- #### **LSP/Completion**
     - [coq_nvim](https://github.com/ms-jpq/coq_nvim), Very fast code completion
         - coq.artifacts
         - coq.thirdparty
