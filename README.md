@@ -2,7 +2,7 @@
 
 ### Features:
 - One second startup or less
-- Nice-looking (Nordic and Tokyo Night themes "fully" integrated, comes with more but without correct highlighting)
+- Nice-looking (Nordic and Tokyo Night themes "fully" integrated, comes with [more](https://github.com/HardoMX/nvim#gui) but without correct highlighting)
 - A complete, but pretty simple package, with an easy to read/use structure
 
 ---
