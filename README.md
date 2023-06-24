@@ -1,13 +1,19 @@
 # Hardo's neovim config
 
 ## Features:
-- ### Incredibly short start time, 
+- ### Incredibly short start time despite no lazy loading, and everything will be snappy as everything is already preloaded 
     - 220ms on Arch WSL (Windows 11, ryzen 3700X, 32GB 3200MHz RAM)
 - ### Nice-looking (Nordic and Tokyo Night themes "fully" integrated, comes with [more](https://github.com/HardoMX/nvim#gui) but without improved same-word highlighting)
 - ### A complete, but pretty simple package, with an easy to read/use structure
 - ### Easily modifiable for your usecase
 
 ---
+
+### Requirements
+- Latest Neovim version
+- ripgrep (optional, adds functionality to Telescope search)
+- Python 3 with venv
+- A Nerdfont, I use [Jetbrains Mono NerdFont](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip)
 
 ### Installation:
 1. Clone the repository into your `.config` directory
