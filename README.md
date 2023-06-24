@@ -1,9 +1,9 @@
 # Hardo's neovim config
 
-### Features:
-- Incredibly short start time
-- Nice-looking (Nordic and Tokyo Night themes "fully" integrated, comes with [more](https://github.com/HardoMX/nvim#gui) but without improved same-word highlighting)
-- A complete, but pretty simple package, with an easy to read/use structure
+## Features:
+- ### Incredibly short start time
+- ### Nice-looking (Nordic and Tokyo Night themes "fully" integrated, comes with [more](https://github.com/HardoMX/nvim#gui) but without improved same-word highlighting)
+- ### A complete, but pretty simple package, with an easy to read/use structure
 
 ---
 
