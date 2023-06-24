@@ -4,12 +4,13 @@ require'regexplainer'.setup {
   mode = 'narrative', -- TODO: 'ascii', 'graphical'
 
   -- automatically show the explainer when the cursor enters a regexp
-  auto = false,
+  auto = true,
 
   -- filetypes (i.e. extensions) in which to run the autocommand
   filetypes = {
     'html',
     'js',
+    'md',
     'cjs',
     'mjs',
     'ts',
