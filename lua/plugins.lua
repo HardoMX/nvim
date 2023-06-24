@@ -12,30 +12,21 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-    -- Core
     use 'wbthomason/packer.nvim'
+
+    -- Core
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
-
-    -- GUI
-    use 'nvim-lualine/lualine.nvim'
-    use {'kdheepak/tabline.nvim', 
-        requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
-    }
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/nvim-treesitter-context'
-
-    -- Utils
-    use 'm4xshen/autoclose.nvim'
-    use 'jghauser/mkdir.nvim'
-    use 'shellRaining/hlchunk.nvim'
-    use 'NvChad/nvim-colorizer.lua'
-    use 'sitiom/nvim-numbertoggle'
-    use 'RRethy/vim-illuminate'
     use { 'nvim-telescope/telescope.nvim',
         tag = '0.1.1',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-context'
+
+    -- GUI
+    use 'nvim-lualine/lualine.nvim'
+    use 'shellRaining/hlchunk.nvim'
     use { 'bennypowers/nvim-regexplainer',
         config = function() require'regexplainer'.setup() end,
         requires = {
@@ -43,10 +34,17 @@ return require('packer').startup(function(use)
             'MunifTanjim/nui.nvim',
         } 
     }
-    use 'gelguy/wilder.nvim'
-    use 'folke/which-key.nvim'
-    use 'numToStr/FTerm.nvim'
+    use {'kdheepak/tabline.nvim', 
+        requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
+    }
     use 'moll/vim-bbye'
+    use 'RRethy/vim-illuminate'
+    use 'gelguy/wilder.nvim'
+
+    -- Utils
+    use 'sitiom/nvim-numbertoggle'
+    use 'jghauser/mkdir.nvim'
+    use 'numToStr/FTerm.nvim'
     use { 'folke/noice.nvim',
         requires = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -60,15 +58,20 @@ return require('packer').startup(function(use)
     use { 'abecodes/tabout.nvim',
         wants = {'nvim-treesitter'}, 
     }
+    use 'm4xshen/autoclose.nvim'
+    use 'folke/which-key.nvim'
+    use 'NvChad/nvim-colorizer.lua'
 
-    -- LSP
+    -- LSP and Autocompletion
     use 'ms-jpq/coq_nvim'
     use 'ms-jpq/coq.artifacts'
     use 'ms-jpq/coq.thirdparty'
+    use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" } -- If on Windows change to run = "pwsh.exe -file .\\dl_binaries.ps1", you might also need to change the powershell execution policy
+--    use 'folke/trouble.nvim'
     
     -- Themes
     use 'AlexvZyl/nordic.nvim'
-    use { 'catppuccin/nvim", as = "catppuccin' }
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'rebelot/kanagawa.nvim'
     use 'jacoborus/tender.vim'
     use {'nyoom-engineering/oxocarbon.nvim'}
