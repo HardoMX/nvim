@@ -52,6 +52,7 @@
         - Close tab nicely: [vim-bbye](https://github.com/moll/vim-bbye) (Config in Utils)
     - Word Highlighting: [vim-illuminate](https://github.com/RRethy/vim-illuminate)
     - Wild Menu: [wilder](https://github.com/gelguy/wilder.nvim)
+    - Dashboard: [dashboard](https://github.com/nvimdev/dashboard-nvim)
   
 - #### **Utils**
     - [numbertoggle](https://github.com/sitiom/nvim-numbertoggle), Automatically switches between relative and absolute numbers depending on mode
@@ -78,17 +79,17 @@
 ### Mappings
 | Keybind | Action |
 | :-: | :- |
-| <**ctrl+n**> | Open file tree |
-| <**ctrl+p**> | Open search |
-| <**space+t**> | Choose Colorscheme |
-| <**shift+t**> | Next Tab |
-| <**shift+b**> | Previous Tab |
-| <**Ctrl+g**> | Close current Tab |
-| <**Enter+Enter**> | Open Terminal |
+| <**ctrl + n**> | Open file tree |
+| <**ctrl + p**> | Open search |
+| <**space + t**> | Choose Colorscheme |
+| <**shift + t**> | Next Tab |
+| <**shift + b**> | Previous Tab |
+| <**Ctrl + g**> | Close current Tab |
+| <**Enter + Enter**> | Open Terminal |
 | <**Esc**> | Close Terminal, If the terminal is not focused, otherwise it is easier to just type `exit` in the terminal window |
 | <**Tab**> | Cycle through comp suggestions |
 | <**Enter**> | Accept comp suggestion |
-| <**Right**> | Accept Tabnine Suggestion |
+| <**Shift + Right**> | Accept Tabnine Suggestion |
 
 ---
 
