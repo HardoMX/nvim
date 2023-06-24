@@ -12,7 +12,7 @@
 1. Clone the repository into your `.config` directory
 2. Start nvim with the `nvim` command
 3. There might be errors, but just run `:PackerInstall`, and almost everything should work
-4. To get coq_nvim to work you might also need to do `:COQdeps` and then you can do `:COQnow`
+4. To get coq_nvim to work you might also need to do `:COQdeps` and then you can do `:COQnow` to start COQ (Note that autostart is on, so this will only be necessary the first time)
 
 **Notes**
 - The README and LICENSE will also be in this repository, you could remove them if you want, but they shouldn't create any problems
