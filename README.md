@@ -10,7 +10,8 @@
 ### Installation:
 1. Clone the repository into your `.config` directory
 2. Start nvim with the `nvim` command
-3. There might be errors, but just run `:PackerInstall`, and everything should work
+3. There might be errors, but just run `:PackerInstall`, and almost everything should work
+4. To get coq_nvim to work you might also need to do `:COQdeps` and then you can do `:COQnow`
 
 **Notes**
 - The README and LICENSE will also be in this repository, you could remove them if you want, but they shouldn't create any problems
@@ -40,7 +41,7 @@
     - Indent and Chunk Highlighting: [hl-chunks](https://github.com/shellRaining/hlchunk.nvim)
     - Regex Help(Maybe broken): [regexplainer](https://github.com/bennypowers/nvim-regexplainer)
     - Tabs: [tabline](https://github.com/kdheepak/tabline.nvim)
-        - Close buffer nicely: [vim-bbye](https://github.com/moll/vim-bbye) (Config in Utils)
+        - Close tab nicely: [vim-bbye](https://github.com/moll/vim-bbye) (Config in Utils)
     - Word Highlighting: [vim-illuminate](https://github.com/RRethy/vim-illuminate)
     - Wild Menu: [wilder](https://github.com/gelguy/wilder.nvim)
   
@@ -53,6 +54,13 @@
     - [autoclose](https://github.com/m4xshen/autoclose.nvim), Automatically closes (), {}, and more
     - [Which-Key](https://github.com/folke/which-key.nvim), Shows available keymaps
     - [colorizer](https://github.com/NvChad/nvim-colorizer.lua), Shows what color a color code is
+    - [trouble](https://github.com/folke/trouble.nvim), Inline errors and more
+
+- #### **LSP**
+    - [coq_nvim](https://github.com/ms-jpq/coq_nvim), Very fast code completion
+        - coq.artifacts
+        - coq.thirdparty
+    - [Tabnine](https://github.com/codota/tabnine-nvim), AI completion suggestions
 
 
 
@@ -60,22 +68,27 @@
 ---
 
 ### Mappings
-- Open file tree: <**ctrl+n**>
-- Open search: <**ctrl+p**>
-- Choose Colorscheme: <**space+t**>
-- Next Tab: <**shift+t**>
-- Previous Tab: <**shift+b**>
-- Close current Tab: <**shift+g**>
-- Open Terminal: <**Enter+Enter**>
-- Close Terminal: <**Esc**>, If the terminal is not focused, otherwise it is easier to just type `exit` in the terminal window
+| Keybind | Action |
+| :-: | :-: |
+| <**ctrl+n**> | Open file tree |
+| <**ctrl+p**> | Open search |
+| <**space+t**> | Choose Colorscheme |
+| <**shift+t**> | Next Tab |
+| <**shift+b**> | Previous Tab |
+| <**shift+g**> | Close current Tab |
+| <**Enter+Enter**> | Open Terminal |
+| <**Esc**> | Close Terminal, If the terminal is not focused, otherwise it is easier to just type `exit` in the terminal window |
+| <**Tab**> | Cycle through comp suggestions |
+| <**Enter**> | Accept comp suggestion |
+| <**Right**> | Accept Tabnine Suggestion |
 
 ---
 
 ### Plans
-- No LazyLoading, one second is still fast and then there will be less wait for plugins when you use them. However, if the config becomes bigger I might change this
-- More Colorschemes
-- LSP
-- DAP
-- Autocompletion
-- Snippets
-- "Code Moving"
+[] No LazyLoading, one second is still fast and then there will be less wait for plugins when you use them. However, if the config becomes bigger I might change this
+[] More Colorschemes
+[] LSP
+[] DAP
+[x] Autocompletion
+[x] Snippets
+[] "Code Moving"
