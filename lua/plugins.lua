@@ -12,22 +12,20 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+    -- Core
     use 'wbthomason/packer.nvim'
-    use 'AlexvZyl/nordic.nvim'
-    use { 'catppuccin/nvim", as = "catppuccin' }
-    use 'rebelot/kanagawa.nvim'
-    use 'jacoborus/tender.vim'
-    use {'nyoom-engineering/oxocarbon.nvim'}
-    use 'rmehri01/onenord.nvim'
-    use 'folke/tokyonight.nvim'
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
+
+    -- GUI
     use 'nvim-lualine/lualine.nvim'
     use {'kdheepak/tabline.nvim', 
         requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
     }
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-context'
+
+    -- Utils
     use 'm4xshen/autoclose.nvim'
     use 'jghauser/mkdir.nvim'
     use 'shellRaining/hlchunk.nvim'
@@ -62,9 +60,20 @@ return require('packer').startup(function(use)
     use { 'abecodes/tabout.nvim',
         wants = {'nvim-treesitter'}, 
     }
+
+    -- LSP
     use 'ms-jpq/coq_nvim'
     use 'ms-jpq/coq.artifacts'
     use 'ms-jpq/coq.thirdparty'
+    
+    -- Themes
+    use 'AlexvZyl/nordic.nvim'
+    use { 'catppuccin/nvim", as = "catppuccin' }
+    use 'rebelot/kanagawa.nvim'
+    use 'jacoborus/tender.vim'
+    use {'nyoom-engineering/oxocarbon.nvim'}
+    use 'rmehri01/onenord.nvim'
+    use 'folke/tokyonight.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
