@@ -40,6 +40,10 @@ return require('packer').startup(function(use)
     use 'moll/vim-bbye'
     use 'RRethy/vim-illuminate'
     use 'gelguy/wilder.nvim'
+    use { 'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        requires = {'nvim-tree/nvim-web-devicons'}
+}
 
     -- Utils
     use 'sitiom/nvim-numbertoggle'
