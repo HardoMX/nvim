@@ -86,7 +86,7 @@
 ---
 
 ### Plans
-- [ ] No LazyLoading, one second is still fast and then there will be less wait for plugins when you use them. However, if the config becomes bigger I might change this
+- No LazyLoading, one second is still fast and then there will be less wait for plugins when you use them. However, if the config becomes bigger I might change this
 - [ ] More Colorschemes
 - [ ] LSP
 - [ ] DAP
