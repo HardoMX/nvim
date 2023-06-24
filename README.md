@@ -48,7 +48,6 @@
     - [numbertoggle](https://github.com/sitiom/nvim-numbertoggle), Automatically switches between relative and absolute numbers depending on mode
     - [mkdir](https://github.com/jghauser/mkdir.nvim), Creates a directory-path if there isn't already one
     - [FTerm](https://github.com/numToStr/FTerm.nvim), Open a terminal window in NeoVIM
-    - [vim-bbye](https://github.com/moll/vim-bbye): Close the current buffer without f-ing up your tab/window layout
     - [noice](https://github.com/folke/noice.nvim), Improved UI
     - [tabout](https://github.com/abecodes/tabout.nvim), Use tab to get out of (), {}, and more
     - [autoclose](https://github.com/m4xshen/autoclose.nvim), Automatically closes (), {}, and more
