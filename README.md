@@ -48,12 +48,12 @@
     - [numbertoggle](https://github.com/sitiom/nvim-numbertoggle), Automatically switches between relative and absolute numbers depending on mode
     - [mkdir](https://github.com/jghauser/mkdir.nvim), Creates a directory-path if there isn't already one
     - [FTerm](https://github.com/numToStr/FTerm.nvim), Open a terminal window in NeoVIM
-    - bbye: Close the current buffer without f-ing up your tab/window layout
+    - [vim-bbye](https://github.com/moll/vim-bbye): Close the current buffer without f-ing up your tab/window layout
     - [noice](https://github.com/folke/noice.nvim), Improved UI
     - [tabout](https://github.com/abecodes/tabout.nvim), Use tab to get out of (), {}, and more
     - [autoclose](https://github.com/m4xshen/autoclose.nvim), Automatically closes (), {}, and more
     - [Which-Key](https://github.com/folke/which-key.nvim), Shows available keymaps
-    - [colorizer](https://github.com/NvChad/nvim-colorizer.lua)
+    - [colorizer](https://github.com/NvChad/nvim-colorizer.lua), Shows what color a color code is
 
 
 
@@ -61,14 +61,14 @@
 ---
 
 ### Mappings
-- Open tree: <ctrl+n>
-- Open search: <ctrl+p>
-- Choose Colorscheme: <space+t>
-- Next Tab: <shift+t>
-- Previous Tab: <shift+b>
-- Close current Tab: <shift+g>
-- Open Terminal: <Enter+Enter>
-- Close Terminal: <Esc>, but easier to just type `exit` in the terminal window
+- Open file tree: <**ctrl+n**>
+- Open search: <**ctrl+p**>
+- Choose Colorscheme: <**space+t**>
+- Next Tab: <**shift+t**>
+- Previous Tab: <**shift+b**>
+- Close current Tab: <**shift+g**>
+- Open Terminal: <**Enter+Enter**>
+- Close Terminal: <**Esc**>, If the terminal is not focused, otherwise it is easier to just type `exit` in the terminal window
 
 ---
 
