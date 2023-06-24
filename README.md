@@ -76,7 +76,7 @@
 | <**space+t**> | Choose Colorscheme |
 | <**shift+t**> | Next Tab |
 | <**shift+b**> | Previous Tab |
-| <**shift+g**> | Close current Tab |
+| <**Ctrl+g**> | Close current Tab |
 | <**Enter+Enter**> | Open Terminal |
 | <**Esc**> | Close Terminal, If the terminal is not focused, otherwise it is easier to just type `exit` in the terminal window |
 | <**Tab**> | Cycle through comp suggestions |
