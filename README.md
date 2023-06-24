@@ -20,14 +20,14 @@
 
 ### Plugins used
 - Manager: [nvim.packer](https://github.com/wbthomason/packer.nvim)
-- ##### **Core**
+- #### **Core**
     - File Explorer: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
         - Icons: [devicons](https://github.com/nvim-tree/nvim-web-devicons) (No Config)
     - Search: [telescope](https://github.com/nvim-telescope/telescope.nvim)
     - Syntax Highlighting: [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (LSP will be added later)
         - [context](https://github.com/nvim-treesitter/nvim-treesitter-context) (No Config)
   
-- ##### **GUI**
+- #### **GUI**
     - Colorschemes: (Configs are in theme.lua)
         - [Nordic](https://github.com/AlexvZyl/nordic.nvim)
         - [Tokyonight](https://github.com/folke/tokyonight.nvim)
@@ -44,7 +44,7 @@
     - Word Highlighting: [vim-illuminate](https://github.com/RRethy/vim-illuminate)
     - Wild Menu: [wilder](https://github.com/gelguy/wilder.nvim)
   
-- ##### **Utils**
+- #### **Utils**
     - [numbertoggle](https://github.com/sitiom/nvim-numbertoggle), Automatically switches between relative and absolute numbers depending on mode
     - [mkdir](https://github.com/jghauser/mkdir.nvim), Creates a directory-path if there isn't already one
     - [FTerm](https://github.com/numToStr/FTerm.nvim), Open a terminal window in NeoVIM
