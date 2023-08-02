@@ -66,6 +66,8 @@ return require('packer').startup(function(use)
     use 'folke/which-key.nvim'
     use 'NvChad/nvim-colorizer.lua'
 
+    use 'wakatime/vim-wakatime'
+
     -- LSP and Autocompletion
     use 'ms-jpq/coq_nvim'
     use 'ms-jpq/coq.artifacts'
