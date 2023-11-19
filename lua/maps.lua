@@ -39,6 +39,22 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 -- LSP, most are set in the plugin file
 vim.keymap.set('n', '<leader>m', vim.cmd.Mason)
 
+-- Comment mappings
+vim.keymap.set('n', '<leader>cc', function()
+    return vim.v.count == 0
+        and '<Plug>(comment_toggle_linewise_current)'
+        or '<Plug>(comment_toggle_linewise_count)'
+    end, { expr = true } )
+
+vim.keymap.set('n', '<leader>bc', function()
+    return vim.v.count == 0
+        and '<Plug>(comment_toggle_blockwise_current)'
+        or '<Plug>(comment_toggle_blockwise_count)'
+    end, { expr = true } )
+
+vim.keymap.set('x', '<leader>c', '<Plug>(comment_toggle_linewise_visual)')
+vim.keymap.set('x', '<leader>b', '<Plug>(comment_toggle_blockwise_visual)')
+
 
 -- NVIM mappings
 
