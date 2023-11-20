@@ -18,7 +18,7 @@
 ### neovim
 | Mode   | Keys | Function | Note |
 | ----   | ---- | -------- | ---- |
-| Visual | K/J  | Move highlighted code up or down | capital letter means <shift>+letter |
+| Visual | K/J  | Move highlighted code up or down | capital letter means \<shift>+letter |
 | Normal |  J   | Move line below to end of current line | |
 | Normal | n/N  | Keep search term in middle of screen | |
 | Vis only | <leader>p | Replace highlighted word without copying it | |
