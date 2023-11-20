@@ -13,7 +13,9 @@
 - Max Niia for having a really nice config to "borrow" ;) from
 
 ## Mappings
-### Just neovim
+### By default <leader> is spacebar
+
+### neovim
 | Mode   | Keys | Function | Note |
 | ----   | ---- | -------- | ---- |
 | Visual | K/J  | Move highlighted code up or down | capital letter means <shift>+letter |
@@ -24,3 +26,33 @@
 | Vis/Norm | <leader>y | Copy to system clipboard | |
 | Normal | <leader>s | Replace all of hovered word | |
 | Normal | <leader>x | Make current file executable | Only on linux |
+
+### Telescope
+|  Mode  |    Keys    | Function | Note |
+|  ----  |    ----    | -------- | ---- |
+| Normal |    <C-p>   | Open telescope for git files | |
+| Normal | <leader>ff | Open telescope for all files | |
+| Normal | <leader>fc | Open telescope for colorschemes | Might not be permanent |
+| Normal | <leader>ps | Find files containing word | |
+
+### Harpoon
+|  Mode  |    Keys    | Function | Note |
+|  ----  |    ----    | -------- | ---- |
+| Normal |   <C-e>    | Open harpoon list | |
+| Normal | <leader>ha | Add file to harpoon list | |
+| Normal | <leader>h<1-9> | Go to file <1-9> | |
+
+|  Mode  |    Keys    | Function | Note |
+|  ---   |    ----    | -------- | ---- |
+| Normal | <leader>cc | Toggle comments linewise on line | |
+| Normal | <leader>bc | Toggle comments blockwise on line | |
+| Visual (x) | <leader>c | Toggle comments linewise on selection | |
+| Visual (x) | <leader>b | Toggle comments blockwise on selection | |
+
+### Other mappings
+| Plugin |  Mode  |    Keys    | Function | Note |
+| ------ |  ----  |    ----    | -------- | ---- |
+|  Lazy  | Normal | <leader>l  | Open Lazy UI |  |
+| Nvim-Tree | Normal | <leader>t | Toggle filetree | |
+| Undotree | Normal | <leader>u | Toggle undotree | |
+| Fugitive | Normal | <leader>gs | Open git status window | |
