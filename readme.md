@@ -42,6 +42,7 @@
 | Normal | <leader>ha | Add file to harpoon list | |
 | Normal | <leader>h<1-9> | Go to file <1-9> | |
 
+### Comment
 |  Mode  |    Keys    | Function | Note |
 |  ---   |    ----    | -------- | ---- |
 | Normal | <leader>cc | Toggle comments linewise on line | |
