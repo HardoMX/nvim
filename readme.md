@@ -50,6 +50,33 @@
 | Visual (x) | <leader>c | Toggle comments linewise on selection | |
 | Visual (x) | <leader>b | Toggle comments blockwise on selection | |
 
+### cmp
+|  Mode  |  Keys  | Function | Notes |
+|  ----  |  ----  | -------- | ----- |
+| Insert | \<C-k> | Previous suggestion | |
+| Insert | \<C-j> | Next suggestion | |
+| Insert | \<C-b> | Scroll down suggestions | |
+| Insert | \<C-f> | Scroll up suggestions | |
+| Insert | \<C-space> | Complete suggestion | I have no idea what this is, the video-guy did it so... |
+| Insert | \<C-e> | Close suggestions | |
+| Insert | \<CR> | Confirm suggestion | |
+
+### LSP
+|  Mode  | Keys | Function | Notes |
+|  ----  | ---- | -------- | ----- |
+| Normal |  gd  | Show definitions | These mappings will probably change soon s I set more things up |
+| Normal |  gi  | Show implementations | |
+| Normal |  gt  | Show type defs | |
+| Norm/Vis | \<leader>ca | See available code actions | |
+| Normal | \<leader>rn | Smart rename | Renames all variables/functions with the same name |
+| Normal | \<leader>D | Show buffer diagnostics | |
+| Normal | \<leader>d | Show line diagnostics | |
+| Normal | \<[d> | Go to previous diagnostic | These will definately be changed as they are difficult on swedish keyboards |
+| Normal | \<]d> | Go to next diagnostic | |
+| Normal | K | Show documentation for what is under cursor | |
+| Normal | \<leader>rs | Restart LSP | Might get removed as it is an unusual and easy ":" command |
+
+
 ### Other mappings
 | Plugin |  Mode  |    Keys    | Function | Note |
 | ------ |  ----  |    ----    | -------- | ---- |

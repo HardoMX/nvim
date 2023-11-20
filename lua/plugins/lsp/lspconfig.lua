@@ -120,5 +120,8 @@ return {
                 },
             },
         })
+
+        -- These are less needed servers that I use a lot
+        lspconfig['marksman'].setup({})
     end,
 }
