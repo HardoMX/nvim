@@ -1,3 +1,6 @@
+--REDO THESE IN whcih-key!!!!!
+local wk = require('which-key')
+
 -- Lazy mappings
 vim.keymap.set('n', '<leader>l', ':Lazy<CR>')
 
@@ -54,6 +57,28 @@ vim.keymap.set('n', '<leader>bc', function()
 
 vim.keymap.set('x', '<leader>c', '<Plug>(comment_toggle_linewise_visual)')
 vim.keymap.set('x', '<leader>b', '<Plug>(comment_toggle_blockwise_visual)')
+
+-- FTerm mappings
+local FTerm = require('FTerm')
+
+wk.register({
+    T = {
+        name = 'FTerm',
+        t = { function() FTerm.toggle() end, 'Toggle terminal' },
+        o = { function() FTerm.open() end, 'Open terminal' },
+        c = { function() FTerm.close() end, 'Close terminal' },
+    }
+}, { prefix = '<leader>' })
+
+-- Bbye mappings
+wk.register({
+    B = {
+        name = 'Bbye, close a buffer',
+        c = {':Bdelete<CR>', 'Delete buffer'},
+        w = {':Bwipeout<CR>', 'Wipeout buffer'},
+        a = {':bufdo :Bdelete<CR>', 'Delete all buffers'},
+    },
+}, { prefix = '<leader>' })
 
 
 -- NVIM mappings
