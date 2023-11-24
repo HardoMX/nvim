@@ -80,6 +80,11 @@ wk.register({
     },
 }, { prefix = '<leader>' })
 
+-- Pretty Hover mappings
+ph = require('pretty_hover')
+wk.register({
+    H = { function () ph.hover() end, 'Toggle hover info' }
+}, { prefix = '<leader>' })
 
 -- NVIM mappings
 
