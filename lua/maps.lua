@@ -1,4 +1,3 @@
---REDO THESE IN whcih-key!!!!!
 local wk = require('which-key')
 
 -- Lazy mappings
@@ -17,21 +16,17 @@ end)
 vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle)
 
 -- Harpoon mappings
-local mark = require('harpoon.mark')
-local ui = require('harpoon.ui')
-
-vim.keymap.set('n', '<leader>ha', mark.add_file)
-vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu)
-
-vim.keymap.set('n', '<leader>h1', function() ui.nav_file(1) end)
-vim.keymap.set('n', '<leader>h2', function() ui.nav_file(2) end)
-vim.keymap.set('n', '<leader>h3', function() ui.nav_file(3) end)
-vim.keymap.set('n', '<leader>h4', function() ui.nav_file(4) end)
-vim.keymap.set('n', '<leader>h5', function() ui.nav_file(5) end)
-vim.keymap.set('n', '<leader>h6', function() ui.nav_file(6) end)
-vim.keymap.set('n', '<leader>h7', function() ui.nav_file(7) end)
-vim.keymap.set('n', '<leader>h8', function() ui.nav_file(8) end)
-vim.keymap.set('n', '<leader>h9', function() ui.nav_file(9) end)
+local harpoon = require("harpoon")
+wk.register({
+	h = {
+		name = "Harpoon",
+		h = { function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, "Quick menu" },
+		a = { function() harpoon:list():append() end, "Add file to quick menu" },
+		n = { function() harpoon:list():next() end, "Go to next file" },
+		p = { function() harpoon:list():prev() end, "Go to previous file" },
+		-- Add mappings for file 1..4, or longer, later
+	}
+}, { prefix = "<leader>" })
 
 -- Undotree mappings
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
@@ -81,10 +76,12 @@ wk.register({
 }, { prefix = '<leader>' })
 
 -- Pretty Hover mappings
-ph = require('pretty_hover')
+local ph = require('pretty_hover')
 wk.register({
     H = { function () ph.hover() end, 'Toggle hover info' }
 }, { prefix = '<leader>' })
+
+
 
 -- NVIM mappings
 

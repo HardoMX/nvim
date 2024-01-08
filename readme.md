@@ -2,7 +2,7 @@
 
 - ripgrep
 - fd
-- npm (for LSP)
+- npm and any other package managers, depending on which LSPs you want
 
 ### TODO
 - Might change autoclose.nvim to nvim-autopairs or ultimate-autopair.nvim

@@ -33,6 +33,7 @@ return {
                 'jsonls',
                 'lua_ls',
                 'pyright',
+                'marksman'
             },
             -- Automatically install configured servers with lspconfig
             automatic_installation = true,

@@ -51,4 +51,21 @@ return {
     {
         'https://gitlab.com/HiPhish/rainbow-delimiters.nvim'
     },
+    {
+        'petertriho/nvim-scrollbar',
+        config = function ()
+            require('scrollbar').setup()
+        end
+    },
+    {
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        opts = {},
+    },
+    {
+        'nmac427/guess-indent.nvim',
+        config = function()
+            require('guess-indent').setup{}
+        end
+    },
 }
