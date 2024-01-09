@@ -2,6 +2,13 @@ return {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
+        {
+            'SmiteshP/nvim-navbuddy',
+            dependencies = {
+                'SmiteshP/nvim-navic'
+            },
+            opts = { lsp = { auto_attach = true } }
+        },
         'hrsh7th/cmp-nvim-lsp',
         { 'antosha417/nvim-lsp-file-operations', config = true}
     },

@@ -3,14 +3,23 @@ local wk = require('which-key')
 -- Lazy mappings
 vim.keymap.set('n', '<leader>l', ':Lazy<CR>')
 
--- Telescope mappings
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
-vim.keymap.set('n', '<leader>ps', function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
+-- Telescope and navigation mappings
+local telescope = require('telescope.builtin')
+wk.register({
+    f = {
+        name = "Find (Telescope etc.)",
+        f = { telescope.find_files, "Find files" },
+        g = { telescope.git_files, "Find files in working tree" }, -- Add deeper level for more commands
+        c = { telescope.colorscheme, "Set colorscheme" },
+        w = { telescope.live_grep, "Find word" },
+        u = { telescope.grep_string, "Find word under cursor" },
+        n = { ":Navbuddy<CR>", "Open navbuddy" },
+        h = { telescope.search_history, "Search history" },
+        s = { telescope.spell_suggest, "Spell suggestions" },
+        p = { telescope.planets, "Explore the universe" }
+        -- git_commits, git_branches, git_status, builtin, reloader, current_buffer_fuzzy_find
+    }
+}, { prefix = "<leader>" })
 
 -- Nvim-Tree mappings
 vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle)
