@@ -1,8 +1,9 @@
-# Requiered programs
+## Requiered programs
 
 - ripgrep
 - fd
 - npm and any other package managers, depending on which LSPs you want
+- deno, for peek.nvim (live md viewer)
 
 ### TODO
 - Might change autoclose.nvim to nvim-autopairs or ultimate-autopair.nvim
@@ -10,7 +11,7 @@
 ### Big thank you to:
 - ThePrimeagen for making an awesome full set up video
 - Josean Martinez for making a great video on LSP an Lazy
-- Max Niia for having a really nice config to "borrow" ;) from
+- Max Niia for having a really nice config to "borrow" from
 
 ## Mappings
 ### By default <leader> is spacebar

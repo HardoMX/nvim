@@ -68,4 +68,13 @@ return {
             require('guess-indent').setup{}
         end
     },
+    {
+        'andweeb/presence.nvim',
+        config = function()
+            require('presence').setup({
+                neovim_image_text = "I use Arch BTW", --I actually do
+                editing_text = "Coding in %s",
+            })
+        end
+    }
 }
