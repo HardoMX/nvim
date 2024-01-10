@@ -1,28 +1,42 @@
 local wk = require('which-key')
 
--- Lazy mappings
-vim.keymap.set('n', '<leader>l', ':Lazy<CR>')
+--  Base mappings
+local ph = require('pretty_hover')
+wk.register({
+    l = { vim.cmd.Lazy, "Open Lazy control panel" },
+    t = { vim.cmd.NvimTreeToggle, "Open filetree" },
+    y = { vim.cmd.UndotreeToggle, "Open undotree" },
+    m = { vim.cmd.Mason, "Open Mason control panel" },
+    H = { function() ph.hover() end, "Toggle hover info" },
+}, { prefix = "<leader>" })
+
+-- Git mappings
+local telescope = require('telescope.builtin')
+wk.register({
+    g = {
+        name = "Git",
+        f = { telescope.git_files, "Find files in working tree" },
+        c = { telescope.get_commits, "See commits" },
+        b = { telescope.git_branches, "See all branches" },
+        s = { telescope.git_status, "See git status" }
+    }
+}, { prefix = "<leader>" })
 
 -- Telescope and navigation mappings
-local telescope = require('telescope.builtin')
 wk.register({
     f = {
         name = "Find (Telescope etc.)",
         f = { telescope.find_files, "Find files" },
-        g = { telescope.git_files, "Find files in working tree" }, -- Add deeper level for more commands
         c = { telescope.colorscheme, "Set colorscheme" },
         w = { telescope.live_grep, "Find word" },
         u = { telescope.grep_string, "Find word under cursor" },
-        n = { ":Navbuddy<CR>", "Open navbuddy" },
+        n = { vim.cmd.Navbuddy, "Open navbuddy" },
         h = { telescope.search_history, "Search history" },
         s = { telescope.spell_suggest, "Spell suggestions" },
-        p = { telescope.planets, "Explore the universe" }
-        -- git_commits, git_branches, git_status, builtin, reloader, current_buffer_fuzzy_find
+        p = { telescope.planets, "Explore the universe" },
+        -- builtin, reloader, current_buffer_fuzzy_find
     }
 }, { prefix = "<leader>" })
-
--- Nvim-Tree mappings
-vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle)
 
 -- Harpoon mappings
 local harpoon = require("harpoon")
@@ -37,30 +51,37 @@ wk.register({
 	}
 }, { prefix = "<leader>" })
 
--- Undotree mappings
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
-
--- Fugitive mappings
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
-
--- LSP, most are set in the plugin file
-vim.keymap.set('n', '<leader>m', vim.cmd.Mason)
-
 -- Comment mappings
-vim.keymap.set('n', '<leader>cc', function()
+-- Doesn't work with wk right now
+wk.register({
+    c = {
+        name = "Comment",
+        c = { function()
+                return vim.v.count == 0
+                and '<Plug>(comment_toggle_linewise_current)'
+                or '<Plug>(comment_toggle_linewise_count)'
+            end, "Comment linewise" },
+        b = { function()
+                return vim.v.count == 0
+                and '<Plug>(comment_toggle_blockwise_current)'
+                or '<Plug>(comment_toggle_blockwise_count)'
+            end, "Comment blockwise" }
+    }
+}, { prefix = '<leader>' })
+--[[ vim.keymap.set('n', '<leader>cc', function()
     return vim.v.count == 0
         and '<Plug>(comment_toggle_linewise_current)'
         or '<Plug>(comment_toggle_linewise_count)'
-    end, { expr = true } )
+    end, { expr = true, desc = "Comment linewise" } )
 
 vim.keymap.set('n', '<leader>bc', function()
     return vim.v.count == 0
         and '<Plug>(comment_toggle_blockwise_current)'
         or '<Plug>(comment_toggle_blockwise_count)'
-    end, { expr = true } )
+    end, { expr = true, desc = "Comment blockwise" } ) ]]
 
-vim.keymap.set('x', '<leader>c', '<Plug>(comment_toggle_linewise_visual)')
-vim.keymap.set('x', '<leader>b', '<Plug>(comment_toggle_blockwise_visual)')
+vim.keymap.set('x', '<leader>c', '<Plug>(comment_toggle_linewise_visual)', { desc = "Comment linewise" })
+vim.keymap.set('x', '<leader>b', '<Plug>(comment_toggle_blockwise_visual)',{ desc = "Comment blockwise" })
 
 -- FTerm mappings
 local FTerm = require('FTerm')
@@ -78,25 +99,21 @@ wk.register({
 wk.register({
     B = {
         name = 'Bbye, close a buffer',
-        c = {':Bdelete<CR>', 'Delete buffer'},
-        w = {':Bwipeout<CR>', 'Wipeout buffer'},
+        c = {vim.cmd.Bdelete, 'Delete buffer'},
+        w = {vim.cmd.Bwipeout, 'Wipeout buffer'},
         a = {':bufdo :Bdelete<CR>', 'Delete all buffers'},
     },
 }, { prefix = '<leader>' })
 
--- Pretty Hover mappings
-local ph = require('pretty_hover')
-wk.register({
-    H = { function () ph.hover() end, 'Toggle hover info' }
-}, { prefix = '<leader>' })
 
 
 
 -- NVIM mappings
 
--- Move highlighted code up and down
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")
+wk.register({
+    J = { ":m '>+1<CR>gv=gv", "Move line down" },
+    K = { ":m '>-2<CR>gv=gv", "Move line up" },
+}, { mode = "v" })
 
 -- Move line below to end of current line
 vim.keymap.set('n', 'J', 'mzJ`z')
