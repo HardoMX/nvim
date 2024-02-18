@@ -7,7 +7,7 @@ return {
         config = function ()
             require('nvim-treesitter.configs').setup{
                 -- Always install these anguages, more can be added with :TSInstall <language>
-                ensure_installed = {'c', 'cpp', 'lua', 'bash', 'vim', 'vimdoc', 'query', 'python', 'markdown', 'html', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'yuck', 'regex'},
+                ensure_installed = {'c', 'cpp', 'lua', 'bash', 'vim', 'vimdoc', 'query', 'python', 'markdown', 'markdown_inline', 'html', 'css', 'scss', 'javascript', 'typescript', 'json', 'yaml', 'yuck', 'regex'},
 
                 -- Don't install parsers synchronously
                 sync_install = false,
