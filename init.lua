@@ -1,7 +1,20 @@
-require("settings")
-require("plugins")
-require("core.treesitter")
-require("core.init")
-require("GUI.init")
-require("utils.init")
-require("lsp.init")
+vim.g.mapleader = " "
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {})
+
+require("maps")
+require("set")
+require("colors")
