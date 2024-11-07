@@ -36,7 +36,7 @@ return {
             keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
 
             opts.desc = 'Show LSP implementations'
-            keymap.set('n', 'gi', '<cmd>Telescope lsp_implementatinos<CR>', opts)
+            keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<CR>', opts)
 
             opts.desc = 'Show LSP type definitions'
             keymap.set('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
