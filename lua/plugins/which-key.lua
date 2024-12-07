@@ -1,13 +1,22 @@
 return {
     'folke/which-key.nvim',
-    config = function ()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-        require('which-key').setup({
-            window = {
-                border = 'single',
-                winblend = 15,
-            },
+    event = "VeryLazy",
+    keys = {
+        {
+            "<leader>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Buffer Local Keymaps (which-key)",
+        },
+    },
+    dependencies = {
+        "echasnovski/mini.icons",
+        "nvim-tree/nvim-web-devicons"
+    },
+    config = function()
+        require("which-key").setup({
+            preset = "modern",
         })
     end
 }
