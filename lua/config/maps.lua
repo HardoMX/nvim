@@ -4,7 +4,8 @@ local wk = require("which-key")
 wk.add({
     { "<leader>l", vim.cmd.Lazy, desc = "Open Lazy.nvim control panel" },
     { "<leader>t", function() require("telescope").extensions.file_browser.file_browser() end, desc = "Open file browser" },
-    { "<leader>R", vim.cmd.RegexplainerToggle, desc = "Toggle regexplainer popup" }
+    { "<leader>R", vim.cmd.RegexplainerToggle, desc = "Toggle regexplainer popup" },
+    { "<leader>U", vim.cmd.UndotreeToggle, desc = "Toggle undotree" }
 })
 
 -- Mappings for Telescope
