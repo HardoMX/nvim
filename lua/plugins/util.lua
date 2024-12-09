@@ -40,5 +40,8 @@ return {
                 auto = true,
             })
         end
+    },
+    {
+        "mbbill/undotree"
     }
 }
