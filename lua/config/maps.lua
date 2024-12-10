@@ -2,7 +2,9 @@ local wk = require("which-key")
 
 -- Mappings for basic usage
 wk.add({
-    { "<leader>l", vim.cmd.Lazy, desc = "Open Lazy.nvim control panel" },
+    { "<leader>c", group = "Config" },
+    { "<leader>cl", vim.cmd.Lazy, desc = "Open Lazy.nvim control panel" },
+    { "<leader>cm", vim.cmd.Mason, desc = "Open Mason control panel" },
     { "<leader>t", function() require("telescope").extensions.file_browser.file_browser() end, desc = "Open file browser" },
     { "<leader>R", vim.cmd.RegexplainerToggle, desc = "Toggle regexplainer popup" },
     { "<leader>U", vim.cmd.UndotreeToggle, desc = "Toggle undotree" }
@@ -11,7 +13,7 @@ wk.add({
 -- Mappings for Telescope
 local telescope = require("telescope.builtin")
 wk.add({
-    { "<leader>f", group = "find" },
+    { "<leader>f", group = "Find" },
     { "<leader>ff", telescope.find_files, desc = "Find files" },
     { "<leader>fw", telescope.live_grep, desc = "Find words in files" },
     { "<leader>fb", telescope.buffers, desc = "Find buffers" },

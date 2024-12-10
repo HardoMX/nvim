@@ -6,10 +6,13 @@ return {
         "saadparwaiz1/cmp_luasnip", -- Integrate luasnip with cmp
         "hrsh7th/cmp-emoji", -- Suggest markdown emojis
         "chrisgrieser/cmp-nerdfont", -- Suggest nerdfont icons
+        "onsails/lspkind.nvim", -- Add pictograms for different LSP types
+        "hrsh7th/cmp-nvim-lsp", -- Add LSP untegration
         -- currently broken: "Jezda1337/nvim-html-css", -- CSS intellisense for html
     },
     config = function()
         local cmp = require("cmp")
+        local lspkind = require("lspkind")
 
         require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -22,7 +25,7 @@ return {
 
             sources = cmp.config.sources({
                 { name = "path" },
-                { name = "nvim-lsp" },
+                { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "emoji" },
                 { name = "nerdfont" },
@@ -33,19 +36,48 @@ return {
             }),
 
             mapping = cmp.mapping.preset.insert({
-                [ "<CR>" ] = cmp.mapping.confirm({ select = true }),
+                [ "<CR>" ] = cmp.mapping.confirm({ select = false }),
                 [ "<Tab>" ] = cmp.mapping.select_next_item(),
+                [ "<S-Tab" ] = cmp.mapping.select_prev_item(),
                 [ "<Down>" ] = cmp.mapping.select_next_item(),
                 [ "<Up>" ] = cmp.mapping.select_prev_item(),
                 [ "<C-Space>" ] = cmp.mapping.complete(),
                 [ "<ESC>" ] = cmp.mapping.abort(),
-            })
+            }),
+
+            view = {
+                entries = { name = "custom", selection_order = "near_cursor" }
+            },
+
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
+
+            formatting = {
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    menu = ({
+                        buffer = "[Buffer]",
+                        nvim_lsp = "[LSP]",
+                        luasnip = "[LuaSnip]",
+                        nvim_lua = "[Lua]",
+                        path = "[Path]",
+                        emoji = "[Emoji]",
+                        nerdfont = "[NF]",
+                    })
+                })
+            },
+
+            experimental = {
+                ghost_text = true,
+            },
         })
 
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         cmp.event:on(
             "confirm_done",
-                cmp_autopairs.on_confirm_done()
+            cmp_autopairs.on_confirm_done()
         )
 
         -- Currently broken: require("html-css"):setup()
