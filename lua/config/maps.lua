@@ -21,7 +21,7 @@ wk.add({
     { "<leader>fc", telescope.colorscheme, desc = "Choose from available colorschemes" },
     { "<leader>fs", telescope.spell_suggest, desc = "See spelling suggestions" },
     { "<leader>fq", telescope.quickfix, desc = "See available quickfixes" },
-    { "<leader>fp", telescope.planets, desc = "Explore the universe" },
+    { "<leader>fp", telescope.planets, desc = "Use the telescope..." },
 })
 
 -- Mappings for Harpoon
@@ -36,3 +36,22 @@ wk.add({
 })
 
 -- Mappings for CMP can be found in lua/plugins/cmp.lua
+
+-- Mappings for LSP
+wk.add({
+    { "<leader>l", group = "LSP stuff" },
+    { "<leader>lrs", vim.cmd.LspRestart, desc = "Restart LSP" },
+    { "<leader>lh", vim.lsp.buf.hover, desc = "Show hover info" },
+    { "<leader>lR", telescope.lsp_references, desc = "Show references"},
+    { "<leader>lD", vim.lsp.buf.declaration, desc = "Go to declaration" },
+    { "<leader>ld", telescope.lsp_definitions, desc = "Go to definitions" },
+    { "<leader>li", telescope.lsp_implementations, desc = "Go to implementations" },
+    { "<leader>lt", telescope.lsp_type_definitions, desc = "Go to definition" },
+    { "<leader>ca", vim.lsp.buf.code_action, desc = "Show available code actions" },
+    { "<leader>rn", vim.lsp.buf.rename, desc = "Smart rename all matches" },
+    { "<leader>d", group = "Diagnostics" },
+    { "<leader>dD", telescope.diagnostics({bufnr=0}), desc = "Show buffer diagnostics" },
+    { "<leader>dd", vim.diagnostic.open_float, desc = "Show line diagnostics" },
+    { "<leader>dn", vim.diagnostic.goto_next, desc = "Go to next diagnostic" },
+    { "<leader>dN", vim.diagnostic.goto_prev, desc = "Go to previous diagnostic" },
+})
