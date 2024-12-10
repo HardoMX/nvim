@@ -32,3 +32,5 @@ wk.add({
     { "<leader>hn", function() harpoon:list():next() end, desc = "Go to next harpoon entry" },
     { "<leader>hp", function() harpoon:list():prev() end, desc = "Go to previous harpoon entry" }
 })
+
+-- Mappings for CMP can be found in lua/plugins/cmp.lua

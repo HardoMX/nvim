@@ -8,22 +8,6 @@ return {
         end
     },
     {
-        "kylechui/nvim-surround",
-        event = "VeryLazy",
-        config = function()
-            require("nvim-surround").setup()
-        end
-    },
-    {
-        "m4xshen/autoclose.nvim",
-        config = function ()
-            require("autoclose").setup({
-                disable_when_touch = true,
-                pair_spaces = true
-            })
-        end
-    },
-    {
         "NMAC427/guess-indent.nvim",
         config = function()
             require("guess-indent").setup()
