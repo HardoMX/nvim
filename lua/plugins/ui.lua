@@ -14,19 +14,15 @@ return {
         config = function()
             require("lualine").setup {
                 options = {
-                    tabline = {
-                        lualine_a = { "buffer" },
-                        lualine_z = { "tabs" }
-                    },
                     winbar = {
                         lualine_c = { "filename" }
                     },
-                    inactive_winbar = { 
+                    inactive_winbar = {
                         lualine_c = { "filename" }
                     }
                 }
             }
-        end
+        end,
     },
     {
         "folke/noice.nvim",
@@ -35,13 +31,13 @@ return {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify"
         },
-        config = function ()
+        config = function()
             require("noice").setup({
                 lsp = {
                     override = {
-                        [ "vim.lsp.util.convert_input_to_markdown_lines" ] = true,
-                        [ "vim.lsp.util.stylize_markdown" ] = true,
-                        [ "cmp.entry.get_documentation" ] = true
+                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                        ["vim.lsp.util.stylize_markdown"] = true,
+                        ["cmp.entry.get_documentation"] = true
                     }
                 },
                 presets = {
@@ -63,15 +59,15 @@ return {
         "folke/drop.nvim",
         opts = {
             themes = {
-                { theme = "new_year", from = { month = 12, day = 31 }, to = { month = 1, day = 1 } },
-                { theme = "valentines_day", month = 2, day = 14 },
-                { theme = "easter", holiday = "easter" },
-                { theme = "april_fools", month = 4, day = 1 },
-                { theme = "xmas", from = { month = 12, day = 24 }, to = { month = 12, day = 25 } },
-                { theme = "leaves", from = { month = 9, day = 15 }, to = { month = 11, day = 21 } },
-                { theme = "snow", from = { month = 11, day = 22 }, to = { month = 2, day = 28 } },
-                { theme = "spring", from = { month = 3, day = 1 }, to = { month = 5, day = 31 } },
-                { theme = "summer", from = { month = 6, day = 1 }, to = { month = 9, day = 14 } }
+                { theme = "new_year",       from = { month = 12, day = 31 }, to = { month = 1, day = 1 } },
+                { theme = "valentines_day", month = 2,                       day = 14 },
+                { theme = "easter",         holiday = "easter" },
+                { theme = "april_fools",    month = 4,                       day = 1 },
+                { theme = "xmas",           from = { month = 12, day = 24 }, to = { month = 12, day = 25 } },
+                { theme = "leaves",         from = { month = 9, day = 15 },  to = { month = 11, day = 21 } },
+                { theme = "snow",           from = { month = 11, day = 22 }, to = { month = 2, day = 28 } },
+                { theme = "spring",         from = { month = 3, day = 1 },   to = { month = 5, day = 31 } },
+                { theme = "summer",         from = { month = 6, day = 1 },   to = { month = 9, day = 14 } }
             },
             screensaver = 1000 * 60 * 5,
             interval = 180
@@ -80,7 +76,7 @@ return {
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = function ()
+        config = function()
             require("todo-comments").setup()
         end
     },

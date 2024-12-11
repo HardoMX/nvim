@@ -30,10 +30,27 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        lsp.lua_ls.setup{ capabilities = capab }
-        lsp.bashls.setup{ capabilities = capab }
-        lsp.clangd.setup{ capabilities = capab }
-        lsp.pylsp.setup{
+
+        vim.api.nvim_create_autocmd('LspAttach', {
+            callback = function(args)
+                local client = vim.lsp.get_client_by_id(args.data.client_id)
+                if not client then return end
+
+                if client.supports_method("textDocument/formatting", 0) then
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        buffer = args.buf,
+                        callback = function()
+                            vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+                        end
+                    })
+                end
+            end,
+        })
+
+        lsp.lua_ls.setup { capabilities = capab }
+        lsp.bashls.setup { capabilities = capab }
+        lsp.clangd.setup { capabilities = capab }
+        lsp.pylsp.setup {
             capabilities = capab,
             settings = {
                 pylsp = {
@@ -50,12 +67,12 @@ return {
                 }
             }
         }
-        lsp.vimls.setup{ capabilities = capab }
-        lsp.gopls.setup{ capabilities = capab }
-        lsp.ansiblels.setup{ capabilities = capab }
-        lsp.terraformls.setup{ capabilities = capab }
-        lsp.html.setup{ capabilities = capab }
-        lsp.marksman.setup{ capabilities = capab }
-        lsp.yamlls.setup{ capabilities = capab }
+        lsp.vimls.setup { capabilities = capab }
+        lsp.gopls.setup { capabilities = capab }
+        lsp.ansiblels.setup { capabilities = capab }
+        lsp.terraformls.setup { capabilities = capab }
+        lsp.html.setup { capabilities = capab }
+        lsp.marksman.setup { capabilities = capab }
+        lsp.yamlls.setup { capabilities = capab }
     end
 }
