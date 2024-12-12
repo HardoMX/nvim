@@ -10,6 +10,37 @@ wk.add({
     { "<leader>U",  vim.cmd.UndotreeToggle,                                                     desc = "Toggle undotree" }
 })
 
+-- Mappings for buffer and window management
+wk.add({
+    { "<leader>w",   group = "Buffers and windows" },
+    { "<leader>n",   "<C-w>w",                     desc = "Go to next window" },
+    { "<leader>p",   "<C-w>W",                     desc = "Go to previous window" },
+    { "<leader>ws",  group = "Split view" },
+    { "<leader>wsh", vim.cmd.split,                desc = "Split view horizontally" },
+    { "<leader>wsv", vim.cmd.vsplit,               desc = "Split view vertically" }
+})
+-- Add mapping for switching windows that dynamically adds or removes keys
+vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWinLeave" }, {
+    callback = function()
+        local windows = vim.api.nvim_tabpage_list_wins(0)
+        local wc = 0
+        for _, v in pairs(windows) do
+            local cfg = vim.api.nvim_win_get_config(v)
+
+            if cfg.relative == "" then
+                wc = wc + 1
+            end
+        end
+        for i = 1, wc do
+            local lhs = "<leader>w" .. i
+            local rhs = i .. "<c-w>w"
+            wk.add({
+                { lhs, rhs, desc = "Move to window" .. i }
+            })
+        end
+    end
+})
+
 -- Mappings for Telescope
 local telescope = require("telescope.builtin")
 wk.add({
