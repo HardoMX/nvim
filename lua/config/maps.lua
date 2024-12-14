@@ -19,27 +19,14 @@ wk.add({
     { "<leader>wsh", vim.cmd.split,                desc = "Split view horizontally" },
     { "<leader>wsv", vim.cmd.vsplit,               desc = "Split view vertically" }
 })
--- Add mapping for switching windows that dynamically adds or removes keys
-vim.api.nvim_create_autocmd({ "BufWinEnter", "BufWinLeave" }, {
-    callback = function()
-        local windows = vim.api.nvim_tabpage_list_wins(0)
-        local wc = 0
-        for _, v in pairs(windows) do
-            local cfg = vim.api.nvim_win_get_config(v)
-
-            if cfg.relative == "" then
-                wc = wc + 1
-            end
-        end
-        for i = 1, wc do
-            local lhs = "<leader>w" .. i
-            local rhs = i .. "<c-w>w"
-            wk.add({
-                { lhs, rhs, desc = "Move to window" .. i }
-            })
-        end
-    end
-})
+-- Add mapping for easily switching windows
+for i = 1, 6 do
+    local lhs = "<leader>w" .. i
+    local rhs = i .. "<c-w>w"
+    wk.add({
+        { lhs, rhs, desc = "Move to window" .. i }
+    })
+end
 
 -- Mappings for Telescope
 local telescope = require("telescope.builtin")
