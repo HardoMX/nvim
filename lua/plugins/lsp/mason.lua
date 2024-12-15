@@ -1,42 +1,33 @@
 return {
-    'williamboman/mason.nvim',
-    dependencies = {
-        'williamboman/mason-lspconfig.nvim',
-    },
+    "williamboman/mason.nvim",
+    dependencies = "williamboman/mason-lspconfig.nvim",
     config = function()
-        -- Import mason
-        local mason = require('mason')
-
-        -- Import mason-lspconfig
-        local mason_lspconfig = require('mason-lspconfig')
-
-        -- Enable mason and configure icons
-        mason.setup({
+        require("mason").setup({
             ui = {
+                border = "rounded",
                 icons = {
-                    package_installed = '✓',
-                    package_pending = '→',
-                    package_uninstalled = '⨯',
-                },
-            },
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
         })
 
-        mason_lspconfig.setup({
-            -- LSP servers for mason to install
+        require("mason-lspconfig").setup({
+            -- Change these as you like. I do a lot of varied stuff, so have a lot of "necessary" LSPs
             ensure_installed = {
-                -- Can install more with :LspInstall <language>
-                'bashls',
-                'clangd',
-                'cssls',
-                'cssmodules_ls',
-                'html',
-                'jsonls',
-                'lua_ls',
-                'pyright',
-                'marksman'
-            },
-            -- Automatically install configured servers with lspconfig
-            automatic_installation = true,
+                "lua_ls",
+                "bashls",
+                "clangd",
+                "pylsp",
+                "vimls",
+                "gopls",
+                "ansiblels",
+                "terraformls",
+                "html",
+                "marksman",
+                "yamlls"
+            }
         })
-    end,
+    end
 }
