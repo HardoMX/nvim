@@ -3,11 +3,10 @@ local wk = require("which-key")
 -- Mappings for basic usage
 wk.add({
     { "<leader>c",  group = "Config" },
-    { "<leader>cl", vim.cmd.Lazy,                                                               desc = "Open Lazy.nvim control panel" },
-    { "<leader>cm", vim.cmd.Mason,                                                              desc = "Open Mason control panel" },
-    { "<leader>ft", function() require("telescope").extensions.file_browser.file_browser() end, desc = "Open file browser" },
-    { "<leader>R",  vim.cmd.RegexplainerToggle,                                                 desc = "Toggle regexplainer popup" },
-    { "<leader>U",  vim.cmd.UndotreeToggle,                                                     desc = "Toggle undotree" }
+    { "<leader>cl", vim.cmd.Lazy,               desc = "Open Lazy.nvim control panel" },
+    { "<leader>cm", vim.cmd.Mason,              desc = "Open Mason control panel" },
+    { "<leader>R",  vim.cmd.RegexplainerToggle, desc = "Toggle regexplainer popup" },
+    { "<leader>U",  vim.cmd.UndotreeToggle,     desc = "Toggle undotree" }
 })
 
 -- Mappings for buffer and window management
@@ -30,16 +29,20 @@ end
 
 -- Mappings for Telescope
 local telescope = require("telescope.builtin")
+local customtele = require("config.telescope")
 wk.add({
     { "<leader>f",  group = "Find" },
-    { "<leader>ff", telescope.find_files,    desc = "Find files" },
-    { "<leader>fw", telescope.live_grep,     desc = "Find words in files" },
-    { "<leader>fb", telescope.buffers,       desc = "Find buffers" },
-    { "<leader>fg", telescope.git_files,     desc = "Find files not excluded by .gitignore" },
-    { "<leader>fc", telescope.colorscheme,   desc = "Choose from available colorschemes" },
-    { "<leader>fs", telescope.spell_suggest, desc = "See spelling suggestions" },
-    { "<leader>fq", telescope.quickfix,      desc = "See available quickfixes" },
-    { "<leader>fp", telescope.planets,       desc = "Use the telescope..." },
+    { "<leader>ff", telescope.find_files,                                                       desc = "Find files" },
+    { "<leader>fw", telescope.live_grep,                                                        desc = "Find words in files" },
+    { "<leader>fb", telescope.buffers,                                                          desc = "Find buffers" },
+    { "<leader>fg", telescope.git_files,                                                        desc = "Find files not excluded by .gitignore" },
+    { "<leader>fc", telescope.colorscheme,                                                      desc = "Choose from available colorschemes" },
+    { "<leader>fs", telescope.spell_suggest,                                                    desc = "See spelling suggestions" },
+    { "<leader>fq", telescope.quickfix,                                                         desc = "See available quickfixes" },
+    { "<leader>fe", function() telescope.find_files({ cwd = vim.fn.stdpath("config") }) end,    desc = "Open nvim config folder" },
+    { "<leader>ft", function() require("telescope").extensions.file_browser.file_browser() end, desc = "Open file browser" },
+    { "<leader>fz", customtele.setup,                                                         desc = "Open file browser with filtering" },
+    { "<leader>fp", telescope.planets,                                                          desc = "Use the telescope..." },
 })
 
 -- Mappings for Harpoon
