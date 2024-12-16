@@ -47,7 +47,8 @@ local live_multigrep = function(opts)
     }):find()
 end
 
-M.setup = function()
+
+M.live_multigrep = function()
     live_multigrep()
 end
 
