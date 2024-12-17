@@ -41,7 +41,7 @@ wk.add({
     { "<leader>fq", telescope.quickfix,                                                         desc = "See available quickfixes" },
     { "<leader>fe", function() telescope.find_files({ cwd = vim.fn.stdpath("config") }) end,    desc = "Open nvim config folder" },
     { "<leader>ft", function() require("telescope").extensions.file_browser.file_browser() end, desc = "Open file browser" },
-    { "<leader>fz", customtele.setup,                                                         desc = "Open file browser with filtering" },
+    { "<leader>fz", customtele.live_multigrep,                                                  desc = "Open file browser with filtering" },
     { "<leader>fp", telescope.planets,                                                          desc = "Use the telescope..." },
 })
 
@@ -85,4 +85,21 @@ wk.add({
     { "<leader>tT", function() trouble.filter({ mode = "diagnostics" }, { buf = 0 }, { toggle = true }) end, desc = "Toggle trouble for current buffer only" },
     { "<leader>tq", function() trouble.toggle("quickfix") end,                                               desc = "Toggle trouble quickfix" },
     { "<leader>tf", function() trouble.focus() end,                                                          desc = "Focus trouble window" },
+})
+
+-- Mappings for DAP
+local dap = require("dap")
+local dapui = require("dapui")
+wk.add({
+    { "<leader>db", dap.toggle_breakpoint,                                               desc = "Toggle breakpoint on current line" },
+    { "<leader>dt", dapui.toggle,                                                        desc = "Toggle DAP UI" },
+    { "<leader>de", dapui.eval,                                                          desc = "Evaluate expression under cursor" },
+    { "<leader>dp", function() require("telescope").extensions.dap.configurations() end, desc = "Choose DAP configuration" },
+    { "<leader>dc", dap.continue,                                                        desc = "DAP continue" },
+    { "<leader>di", dap.step_into,                                                       desc = "DAP step into" },
+    { "<leader>do", dap.step_over,                                                       desc = "DAP step over" },
+    { "<leader>dO", dap.step_out,                                                        desc = "DAP step out" },
+    { "<leader>dB", dap.step_back,                                                       desc = "DAP step back" },
+    { "<leader>dq", dap.close,                                                           desc = "DAP stop" },
+    { "<leader>dR", dap.restart,                                                         desc = "DAP restart" }
 })

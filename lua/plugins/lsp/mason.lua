@@ -1,6 +1,6 @@
 return {
     "williamboman/mason.nvim",
-    dependencies = "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason-lspconfig.nvim", "jay-babu/mason-nvim-dap.nvim" },
     config = function()
         require("mason").setup({
             ui = {
@@ -27,6 +27,26 @@ return {
                 "html",
                 "marksman",
                 "yamlls"
+            }
+        })
+
+        require("mason-nvim-dap").setup({
+            ensure_installed = {
+                "python",
+                "cppdbg",
+                "delve",
+                "firefox",
+                "bash",
+            },
+
+            handlers = {
+                function(config)
+                    require("mason-nvim-dap").default_setup(config)
+                end,
+                -- TODO: Add configurations for specific DAP:s as required
+                -- INFO: Disable some default_setup() since it is set in lua.plugins.dap.lua
+                bash = function() end,
+                firefox = function() end
             }
         })
     end
