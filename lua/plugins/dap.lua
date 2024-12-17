@@ -1,11 +1,22 @@
 return {
     "mfussenegger/nvim-dap",
-    dependencies = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" },
+    dependencies = {
+        "rcarriga/nvim-dap-ui",
+        "nvim-neotest/nvim-nio",
+        "theHamsta/nvim-dap-virtual-text",
+        "LiadOz/nvim-dap-repl-highlights",
+    },
     config = function()
         local dap = require("dap")
         local ui = require("dapui")
 
         ui.setup()
+        require("nvim-dap-virtual-text").setup()
+        require("nvim-dap-repl-highlights").setup()
+
+        require("nvim-treesitter.configs").setup({
+            ensure_installed = { "dap_repl" }
+        })
 
         -- DAPs using mason are set up and configured in lua.plugins.lsp.mason.lua
 
