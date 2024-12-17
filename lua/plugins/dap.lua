@@ -83,7 +83,7 @@ return {
         -- Configure Firefox to ask for url and port
         dap.adapters.firefox = {
             type = "executable",
-            command = vim.fn.exepath("firefox-debug-adapter"),
+            command = vim.fn.exepath('firefox-debug-adapter'),
         }
         dap.configurations.firefox = {
             {
@@ -92,7 +92,7 @@ return {
                 request = "launch",
                 reAttach = true,
                 url = function()
-                    return vim.fn.input("URL: ", "localhost:")
+                    return vim.fn.input("URL: ", "http://localhost:")
                 end,
                 webRoot = "${workspaceFolder}",
                 firefoxExecutable = vim.fn.exepath("firefox"),
