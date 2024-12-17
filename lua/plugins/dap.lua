@@ -51,6 +51,7 @@ return {
 
 
         -- Configure bashdb (Installed through Mason)
+        -- If my pull request to mason-nvim-dap is approved this will no longer be necessary
         dap.adapters.bashdb = {
             type = "executable",
             command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
@@ -75,6 +76,26 @@ return {
                 args = {},
                 env = {},
                 terminalKind = "integrated"
+            }
+        }
+
+
+        -- Configure Firefox to ask for url and port
+        dap.adapters.firefox = {
+            type = "executable",
+            command = vim.fn.exepath("firefox-debug-adapter"),
+        }
+        dap.configurations.firefox = {
+            {
+                name = "Debug",
+                type = "firefox",
+                request = "launch",
+                reAttach = true,
+                url = function()
+                    return vim.fn.input("URL: ", "localhost:")
+                end,
+                webRoot = "${workspaceFolder}",
+                firefoxExecutable = vim.fn.exepath("firefox"),
             }
         }
     end

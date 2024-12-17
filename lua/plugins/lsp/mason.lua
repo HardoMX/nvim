@@ -44,7 +44,9 @@ return {
                     require("mason-nvim-dap").default_setup(config)
                 end,
                 -- TODO: Add configurations for specific DAP:s as required
-                bash = function() end -- INFO: Disable bash default_setup since it is set in lua.plugins.dap.lua
+                -- INFO: Disable some default_setup() since it is set in lua.plugins.dap.lua
+                bash = function() end,
+                firefox = function() end
             }
         })
     end
