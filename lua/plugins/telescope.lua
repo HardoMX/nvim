@@ -2,24 +2,28 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-            "nvim-telescope/telescope-dap.nvim",
-        },
+        opts = {
+            extensions = {
+                fzf = {},
+                dap = {}
+            }
+        }
+    },
+    { "nvim-telescope/telescope-file-browser.nvim", lazy = true },
+    { "nvim-lua/plenary.nvim",                      lazy = true },
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        lazy = true,
         config = function()
-            local telescope = require("telescope")
-
-            telescope.setup({
-                extensions = {
-                    fzf = {},
-                    dap = {}
-                }
-            })
-
-            telescope.load_extension("fzf")
-            telescope.load_extension("dap")
+            require("telescope").load_extension("fzf")
         end
     },
-    { "nvim-telescope/telescope-file-browser.nvim" }
+    {
+        "nvim-telescope/telescope-dap.nvim",
+        lazy = true,
+        config = function()
+            require("telescope").load_extension("dap")
+        end
+    },
 }

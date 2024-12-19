@@ -1,6 +1,7 @@
 return {
     {
         "petertriho/nvim-scrollbar",
+        event = "UIEnter",
         dependencies = { "kevinhwang91/nvim-hlslens", config = function() require("scrollbar.handlers.search").setup() end },
         config = function()
             require("scrollbar").setup({
@@ -57,6 +58,7 @@ return {
     },
     {
         "folke/drop.nvim",
+        event = "UIEnter",
         opts = {
             themes = {
                 { theme = "new_year",       from = { month = 12, day = 31 }, to = { month = 1, day = 1 } },
@@ -75,6 +77,7 @@ return {
     },
     {
         "folke/todo-comments.nvim",
+        event = "UIEnter",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("todo-comments").setup()
@@ -101,21 +104,26 @@ return {
     },
     {
         "NvChad/nvim-colorizer.lua",
+        event = "UIEnter",
         config = function()
             require("colorizer").setup()
         end
     },
     {
-        "RRethy/vim-illuminate"
+        "RRethy/vim-illuminate",
+        event = "UIEnter",
     },
     {
-        "sitiom/nvim-numbertoggle"
+        "sitiom/nvim-numbertoggle",
+        event = "UIEnter",
     },
     {
-        "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
+        "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+        event = "UIEnter",
     },
     {
         "tzachar/highlight-undo.nvim",
+        event = "UIEnter",
         config = function()
             require("highlight-undo").setup({})
         end
