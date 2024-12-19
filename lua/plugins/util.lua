@@ -15,7 +15,8 @@ return {
     },
     {
         "bennypowers/nvim-regexplainer",
-        dependencies = { 
+        lazy = true,
+        dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "MunifTanjim/nui.nvim"
         },
@@ -26,6 +27,7 @@ return {
         end
     },
     {
-        "mbbill/undotree"
+        "mbbill/undotree",
+        lazy = true,
     }
 }
