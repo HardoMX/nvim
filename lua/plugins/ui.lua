@@ -3,27 +3,23 @@ return {
         "petertriho/nvim-scrollbar",
         event = "UIEnter",
         dependencies = { "kevinhwang91/nvim-hlslens", config = function() require("scrollbar.handlers.search").setup() end },
-        config = function()
-            require("scrollbar").setup({
-                handlers = { search = true }
-            })
-        end
+        opts = {
+            handlers = { search = true }
+        }
     },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("lualine").setup {
-                options = {
-                    winbar = {
-                        lualine_c = { "filename" }
-                    },
-                    inactive_winbar = {
-                        lualine_c = { "filename" }
-                    }
+        opts = {
+            options = {
+                winbar = {
+                    lualine_c = { "filename" }
+                },
+                inactive_winbar = {
+                    lualine_c = { "filename" }
                 }
             }
-        end,
+        }
     },
     {
         "folke/noice.nvim",
@@ -32,23 +28,21 @@ return {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify"
         },
-        config = function()
-            require("noice").setup({
-                lsp = {
-                    override = {
-                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-                        ["vim.lsp.util.stylize_markdown"] = true,
-                        ["cmp.entry.get_documentation"] = true
-                    }
-                },
-                presets = {
-                    bottom_search = true,
-                    command_palette = true,
-                    long_message_to_split = true,
-                    lsp_doc_border = false
+        opts = {
+            lsp = {
+                override = {
+                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                    ["vim.lsp.util.stylize_markdown"] = true,
+                    ["cmp.entry.get_documentation"] = true
                 }
-            })
-        end
+            },
+            presets = {
+                bottom_search = true,
+                command_palette = true,
+                long_message_to_split = true,
+                lsp_doc_border = false
+            }
+        }
     },
     {
         "goolord/alpha-nvim",
@@ -78,36 +72,29 @@ return {
     {
         "folke/todo-comments.nvim",
         event = "UIEnter",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require("todo-comments").setup()
-        end
+        opts = {}
     },
     {
         "shellRaining/hlchunk.nvim",
         event = { "UIEnter" },
-        config = function()
-            require("hlchunk").setup({
-                chunk = {
-                    enable = true,
-                    delay = 50,
-                    duration = 50
-                },
-                indent = {
-                    enable = true
-                },
-                line_num = {
-                    enable = true
-                }
-            })
-        end
+        opts = {
+            chunk = {
+                enable = true,
+                delay = 50,
+                duration = 50
+            },
+            indent = {
+                enable = true
+            },
+            line_num = {
+                enable = true
+            }
+        }
     },
     {
         "NvChad/nvim-colorizer.lua",
         event = "UIEnter",
-        config = function()
-            require("colorizer").setup()
-        end
+        opts = {}
     },
     {
         "RRethy/vim-illuminate",
@@ -124,8 +111,6 @@ return {
     {
         "tzachar/highlight-undo.nvim",
         event = "UIEnter",
-        config = function()
-            require("highlight-undo").setup({})
-        end
+        opts = {}
     }
 }
