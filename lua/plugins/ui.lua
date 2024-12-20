@@ -1,7 +1,8 @@
 return {
     {
         "petertriho/nvim-scrollbar",
-        event = "UIEnter",
+        -- event = "UIEnter",
+        lazy = true,
         dependencies = { "kevinhwang91/nvim-hlslens", config = function() require("scrollbar.handlers.search").setup() end },
         opts = {
             handlers = { search = true }

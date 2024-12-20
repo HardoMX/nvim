@@ -32,9 +32,8 @@ return {
             }
         },
     },
-    {
+    --[[{
         "jay-babu/mason-nvim-dap.nvim",
-        dependencies = "mason.nvim",
         -- lazy = true,
         opts = {
             ensure_installed = {
@@ -46,4 +45,5 @@ return {
             },
         }
     }
+    --]]
 }
