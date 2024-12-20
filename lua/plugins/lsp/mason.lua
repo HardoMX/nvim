@@ -1,8 +1,7 @@
 return {
-    "williamboman/mason.nvim",
-    dependencies = { "williamboman/mason-lspconfig.nvim", "jay-babu/mason-nvim-dap.nvim" },
-    config = function()
-        require("mason").setup({
+    {
+        "williamboman/mason.nvim",
+        opts = {
             ui = {
                 border = "rounded",
                 icons = {
@@ -11,9 +10,12 @@ return {
                     package_uninstalled = "✗"
                 }
             }
-        })
-
-        require("mason-lspconfig").setup({
+        },
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        -- lazy = true,
+        opts = {
             -- Change these as you like. I do a lot of varied stuff, so have a lot of "necessary" LSPs
             ensure_installed = {
                 "lua_ls",
@@ -28,9 +30,12 @@ return {
                 "marksman",
                 "yamlls"
             }
-        })
-
-        require("mason-nvim-dap").setup({
+        },
+    },
+    --[[{
+        "jay-babu/mason-nvim-dap.nvim",
+        -- lazy = true,
+        opts = {
             ensure_installed = {
                 "python",
                 "cppdbg",
@@ -38,16 +43,7 @@ return {
                 "firefox",
                 "bash",
             },
-
-            handlers = {
-                function(config)
-                    require("mason-nvim-dap").default_setup(config)
-                end,
-                -- TODO: Add configurations for specific DAP:s as required
-                -- INFO: Disable some default_setup() since it is set in lua.plugins.dap.lua
-                bash = function() end,
-                firefox = function() end
-            }
-        })
-    end
+        }
+    }
+    --]]
 }
