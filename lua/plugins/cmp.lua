@@ -28,8 +28,6 @@ return {
                 { name = "path" },
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
-                { name = "emoji" },
-                { name = "nerdfont" },
                 { name = "nvim_lua" },
                 -- Currenty broken: { name = "nvim-html-css" },
             }, {
@@ -64,8 +62,6 @@ return {
                         luasnip = "[LuaSnip]",
                         nvim_lua = "[Lua]",
                         path = "[Path]",
-                        emoji = "[Emoji]",
-                        nerdfont = "[NF]",
                     })
                 })
             },
