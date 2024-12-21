@@ -60,21 +60,31 @@ wk.add({
 
 -- Mappings for LSP
 wk.add({
-    { "<leader>l",   group = "LSP stuff" },
-    { "<leader>lrs", vim.cmd.LspRestart,                   desc = "Restart LSP" },
-    { "<leader>lh",  vim.lsp.buf.hover,                    desc = "Show hover info" },
-    { "<leader>lR",  telescope.lsp_references,             desc = "Show references" },
-    { "<leader>lD",  vim.lsp.buf.declaration,              desc = "Go to declaration" },
-    { "<leader>ld",  telescope.lsp_definitions,            desc = "Go to definitions" },
-    { "<leader>li",  telescope.lsp_implementations,        desc = "Go to implementations" },
-    { "<leader>lt",  telescope.lsp_type_definitions,       desc = "Go to definition" },
-    { "<leader>ca",  vim.lsp.buf.code_action,              desc = "Show available code actions" },
-    { "<leader>rn",  vim.lsp.buf.rename,                   desc = "Smart rename all matches" },
-    { "<leader>d",   group = "Diagnostics" },
-    { "<leader>dD",  telescope.diagnostics({ bufnr = 0 }), desc = "Show buffer diagnostics" },
-    { "<leader>dd",  vim.diagnostic.open_float,            desc = "Show line diagnostics" },
-    { "<leader>dn",  vim.diagnostic.goto_next,             desc = "Go to next diagnostic" },
-    { "<leader>dN",  vim.diagnostic.goto_prev,             desc = "Go to previous diagnostic" },
+    { "<leader>l",  group = "LSP stuff" },
+    { "<leader>lS", vim.cmd.LspRestart,                          desc = "Restart LSP" },
+    { "<leader>lh", vim.lsp.buf.hover,                           desc = "Show hover info" },
+    { "<leader>lr", function() vim.cmd.Glance("references") end, desc = "Show references (Glance)" },
+    { "<leader>lR", telescope.lsp_references,                    desc = "Show references (Telescope)" },
+    { "<leader>lD", vim.lsp.buf.declaration,                     desc = "Go to declaration" },
+    { "<leader>ld", telescope.lsp_definitions,                   desc = "Go to definitions" },
+    { "<leader>li", telescope.lsp_implementations,               desc = "Go to implementations" },
+    { "<leader>lt", telescope.lsp_type_definitions,              desc = "Go to type definition" },
+    { "<leader>ca", vim.lsp.buf.code_action,                     desc = "Show available code actions" },
+    { "<leader>rn", vim.lsp.buf.rename,                          desc = "Smart rename all matches" },
+    { "<leader>d",  group = "Diagnostics" },
+    { "<leader>dD", telescope.diagnostics({ bufnr = 0 }),        desc = "Show buffer diagnostics" },
+    { "<leader>dd", vim.diagnostic.open_float,                   desc = "Show line diagnostics" },
+    { "<leader>dn", vim.diagnostic.goto_next,                    desc = "Go to next diagnostic" },
+    { "<leader>dN", vim.diagnostic.goto_prev,                    desc = "Go to previous diagnostic" },
+})
+
+-- Mappings for Glance
+wk.add({
+    { "<leader>g",  group = "Glance (LSP)" },
+    { "<leader>gd", function() vim.cmd.Glance("definitions") end,      desc = "Glance at definitions" },
+    { "<leader>gD", function() vim.cmd.Glance("type_definitions") end, desc = "Glance at type definitions" },
+    { "<leader>gr", function() vim.cmd.Glance("references") end,       desc = "Glance at references" },
+    { "<leader>gi", function() vim.cmd.Glance("implementations") end,  desc = "Glance at implementations" },
 })
 
 -- Mappings for Trouble

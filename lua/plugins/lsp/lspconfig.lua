@@ -59,11 +59,6 @@ return {
         end
     },
     {
-        "antosha417/nvim-lsp-file-operations",
-        lazy = true,
-        config = true
-    },
-    {
         "folke/lazydev.nvim",
         lazy = true,
         ft = "lua",
@@ -77,5 +72,24 @@ return {
         "folke/trouble.nvim",
         lazy = true,
         cmd = "Trouble"
+    },
+    {
+        "dnlhc/glance.nvim",
+        event = { "LspAttach" },
+        opts = {
+            border = {
+                enable = true
+            },
+            hooks = {
+                before_open = function(results, open, jump, method)
+                    if #results == 1 then
+                        jump(results[1])
+                    else
+                        open(results)
+                    end
+                end,
+            },
+            use_trouble_qf = true
+        }
     }
 }
