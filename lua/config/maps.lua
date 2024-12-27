@@ -56,25 +56,54 @@ wk.add({
     { "<leader>hp", function() harpoon:list():prev() end,                        desc = "Go to previous harpoon entry" }
 })
 
--- Mappings for CMP can be found in lua/plugins/cmp.lua
+-- Most mappings for CMP can be found in lua/plugins/cmp.lua
+wk.add({
+    { "<leader>px",  group = "px to rem" },
+    { "<leader>pxc", function() vim.cmd.PxToRemCursor() end, desc = "Convert px under cursor to rem" },
+    { "<leader>pxl", function() vim.cmd.PxToRemLine() end,   desc = "Convert px on line to rem" }
+})
 
 -- Mappings for LSP
 wk.add({
-    { "<leader>l",   group = "LSP stuff" },
-    { "<leader>lrs", vim.cmd.LspRestart,                   desc = "Restart LSP" },
-    { "<leader>lh",  vim.lsp.buf.hover,                    desc = "Show hover info" },
-    { "<leader>lR",  telescope.lsp_references,             desc = "Show references" },
-    { "<leader>lD",  vim.lsp.buf.declaration,              desc = "Go to declaration" },
-    { "<leader>ld",  telescope.lsp_definitions,            desc = "Go to definitions" },
-    { "<leader>li",  telescope.lsp_implementations,        desc = "Go to implementations" },
-    { "<leader>lt",  telescope.lsp_type_definitions,       desc = "Go to definition" },
-    { "<leader>ca",  vim.lsp.buf.code_action,              desc = "Show available code actions" },
-    { "<leader>rn",  vim.lsp.buf.rename,                   desc = "Smart rename all matches" },
-    { "<leader>d",   group = "Diagnostics" },
-    { "<leader>dD",  telescope.diagnostics({ bufnr = 0 }), desc = "Show buffer diagnostics" },
-    { "<leader>dd",  vim.diagnostic.open_float,            desc = "Show line diagnostics" },
-    { "<leader>dn",  vim.diagnostic.goto_next,             desc = "Go to next diagnostic" },
-    { "<leader>dN",  vim.diagnostic.goto_prev,             desc = "Go to previous diagnostic" },
+    { "<leader>l",  group = "LSP stuff" },
+    { "<leader>lS", vim.cmd.LspRestart,                          desc = "Restart LSP" },
+    { "<leader>lh", vim.lsp.buf.hover,                           desc = "Show hover info" },
+    { "<leader>lr", function() vim.cmd.Glance("references") end, desc = "Show references (Glance)" },
+    { "<leader>lR", telescope.lsp_references,                    desc = "Show references (Telescope)" },
+    { "<leader>lD", vim.lsp.buf.declaration,                     desc = "Go to declaration" },
+    { "<leader>ld", telescope.lsp_definitions,                   desc = "Go to definitions" },
+    { "<leader>li", telescope.lsp_implementations,               desc = "Go to implementations" },
+    { "<leader>lt", telescope.lsp_type_definitions,              desc = "Go to type definition" },
+    { "<leader>ln", vim.lsp.buf.rename,                          desc = "Smart rename all matches" },
+    { "<leader>ca", vim.lsp.buf.code_action,                     desc = "Show available code actions" },
+    { "<leader>d",  group = "Diagnostics" },
+    { "<leader>dD", telescope.diagnostics({ bufnr = 0 }),        desc = "Show buffer diagnostics" },
+    { "<leader>dd", vim.diagnostic.open_float,                   desc = "Show line diagnostics" },
+    { "<leader>dn", vim.diagnostic.goto_next,                    desc = "Go to next diagnostic" },
+    { "<leader>dN", vim.diagnostic.goto_prev,                    desc = "Go to previous diagnostic" },
+})
+
+-- Mappings for Glance
+wk.add({
+    { "<leader>g",  group = "Glance (LSP)" },
+    { "<leader>gd", function() vim.cmd.Glance("definitions") end,      desc = "Glance at definitions" },
+    { "<leader>gD", function() vim.cmd.Glance("type_definitions") end, desc = "Glance at type definitions" },
+    { "<leader>gr", function() vim.cmd.Glance("references") end,       desc = "Glance at references" },
+    { "<leader>gi", function() vim.cmd.Glance("implementations") end,  desc = "Glance at implementations" },
+})
+
+-- Mappings for refactoring
+local rf = require("refactoring")
+wk.add({
+    { "<leader>r",   group = "refactor" },
+    { "<leader>ref", function() rf.refactor("Extract Function") end,                         desc = "Extract selection to separate function",                mode = "x" },
+    { "<leader>reF", function() rf.refactor("Extract Function To File") end,                 desc = "Extract selection to separate function, in new file",   mode = "x" },
+    { "<leader>rif", function() rf.refactor("Inline Function") end,                          desc = "Reverse extract, from function to separate code blocks" },
+    { "<leader>rev", function() rf.refactor("Extract Variable") end,                         desc = "Extract values to variable",                            mode = "x" },
+    { "<leader>riv", function() rf.refactor("Inline Variable") end,                          desc = "Reverse extract variable to separate values",           mode = { "x", "n" } },
+    { "<leader>rb",  function() rf.refactor("Extract Block") end,                            desc = "Extract code block" },
+    { "<leader>rbf", function() rf.refactor("Extract Block To File") end,                    desc = "Extract code block to file" },
+    { "<leader>rr",  function() require("telescope").extensions.refactoring.refactors() end, desc = "Choose refactor with telescope, (kinda broken)",        mode = { "x", "n" } },
 })
 
 -- Mappings for Trouble
