@@ -55,6 +55,7 @@ return {
                     documentation = cmp.config.window.bordered(),
                 },
 
+                ---@diagnostic disable-next-line: missing-fields
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = "symbol_text",
@@ -84,6 +85,7 @@ return {
     },
     {
         "jsongerber/nvim-px-to-rem",
+        lazy = true,
         opts = {
             add_cmp_source = true,
         }
