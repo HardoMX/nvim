@@ -14,6 +14,9 @@ return {
                 },
             })
 
+            npairs.add_rule(Rule("*", "*", "markdown"))
+            npairs.add_rule(Rule("_", "_", "markdown"))
+
             local function rule2(a1, ins, a2, lang)
                 npairs.add_rule(
                     Rule(ins, ins, lang)
@@ -36,5 +39,13 @@ return {
         "windwp/nvim-ts-autotag",
         event = "InsertEnter",
         opts = {}
+    },
+    {
+        "RRethy/nvim-treesitter-endwise",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                endwise = { enable = true }
+            })
+        end
     }
 }

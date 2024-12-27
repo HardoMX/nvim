@@ -56,7 +56,12 @@ wk.add({
     { "<leader>hp", function() harpoon:list():prev() end,                        desc = "Go to previous harpoon entry" }
 })
 
--- Mappings for CMP can be found in lua/plugins/cmp.lua
+-- Most mappings for CMP can be found in lua/plugins/cmp.lua
+wk.add({
+    { "<leader>px",  group = "px to rem" },
+    { "<leader>pxc", function() vim.cmd.PxToRemCursor() end, desc = "Convert px under cursor to rem" },
+    { "<leader>pxl", function() vim.cmd.PxToRemLine() end,   desc = "Convert px on line to rem" }
+})
 
 -- Mappings for LSP
 wk.add({
