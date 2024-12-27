@@ -36,7 +36,7 @@ return {
                     augend.date.alias["%Y-%m-%d"],
                     augend.date.alias["%Y/%m/%d"],
                     augend.date.alias["%m/%d"],
-                    augend.date.alias["%d/%m"],
+                    -- augend.date.alias["%d/%m"], -- I honestly forgot if we write the month or day first on these short dates in Sweden
                     augend.date.alias["%H:%M"],
                 }
             }
