@@ -132,3 +132,16 @@ wk.add({
     { "<leader>dq", dap.close,                                                           desc = "DAP stop" },
     { "<leader>dR", dap.restart,                                                         desc = "DAP restart" }
 })
+
+-- Mappings for Dial
+local dial = require("dial.map")
+wk.add({
+    { "<C-a>",  function() dial.manipulate("increment", "normal") end },
+    { "<C-x>",  function() dial.manipulate("decrement", "normal") end },
+    { "g<C-a>", function() dial.manipulate("increment", "gnormal") end },
+    { "g<C-x>", function() dial.manipulate("decrement", "gnormal") end },
+    { "<C-a>",  function() dial.manipulate("increment", "visual") end,  mode = "v" },
+    { "<C-x>",  function() dial.manipulate("decrement", "visual") end,  mode = "v" },
+    { "g<C-a>", function() dial.manipulate("increment", "gvisual") end, mode = "v" },
+    { "g<C-x>", function() dial.manipulate("decrement", "gvisual") end, mode = "v" },
+})
