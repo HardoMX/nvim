@@ -21,42 +21,12 @@ return {
         priority = 1000,
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "kepano/flexoki",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "nyoom-engineering/nyoom.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "nyoom-engineering/oxocarbon.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "jacoborus/tender.vim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
         "olimorris/onedarkpro.nvim",
         lazy = false,
         priority = 1000,
     },
     {
         "scottmckendry/cyberdream.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "zenbones-theme/zenbones.nvim",
         lazy = false,
         priority = 1000,
     },
@@ -71,7 +41,29 @@ return {
         priority = 1000,
     },
     {
-        "rmehri01/onenord.nvim",
+        "tiagovla/tokyodark.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "Tsuzat/NeoSolarized.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "marko-cerovac/material.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            contrast = {
+                sidebars = true,
+                lsp_virtual_text = true,
+                non_current_windows = true
+            },
+        }
+    },
+    {
+        "rose-pine/neovim",
         lazy = false,
         priority = 1000,
     },
