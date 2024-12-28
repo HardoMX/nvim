@@ -118,4 +118,12 @@ return {
         "svampkorg/moody.nvim",
         event = { "ModeChanged", "BufWinEnter", "WinEnter" }
     },
+    {
+        "anuvyklack/windows.nvim",
+        dependencies = {
+            "anuvyklack/middleclass",
+            "anuvyklack/animation.nvim"
+        },
+        opts = {},
+    },
 }

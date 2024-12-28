@@ -17,11 +17,16 @@ wk.add({
 -- Mappings for buffer and window management
 wk.add({
     { "<leader>w",   group = "Buffers and windows" },
-    { "<leader>n",   "<C-w>w",                     desc = "Go to next window" },
-    { "<leader>p",   "<C-w>W",                     desc = "Go to previous window" },
+    { "<leader>n",   "<C-w>w",                            desc = "Go to next window" },
+    { "<leader>p",   "<C-w>W",                            desc = "Go to previous window" },
+    { "<leader>wS",  "<C-w><C-r>",                        desc = "Switch window places/rotate windows right" },
+    { "<leader>wm",  vim.cmd.WindowsMaximize,             desc = "Maximize window toggle" },
+    { "<leader>wv",  vim.cmd.WindowsMaximizeVertically,   desc = "Maximize window vertically" },
+    { "<leader>wh",  vim.cmd.WindowsMaximizeHorizontally, desc = "Maximize window horizontally" },
+    { "<leader>we",  vim.cmd.WindowsEqualize,             desc = "Equalize windows" },
     { "<leader>ws",  group = "Split view" },
-    { "<leader>wsh", vim.cmd.split,                desc = "Split view horizontally" },
-    { "<leader>wsv", vim.cmd.vsplit,               desc = "Split view vertically" }
+    { "<leader>wsh", vim.cmd.split,                       desc = "Split view horizontally" },
+    { "<leader>wsv", vim.cmd.vsplit,                      desc = "Split view vertically" }
 })
 -- Add mapping for easily switching windows
 for i = 1, 6 do

@@ -40,6 +40,11 @@ vim.opt.undofile = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.cmd([[
+cabbrev h vert h
+cabbrev help vert help
+]])
+
 vim.opt.clipboard = "unnamedplus"
 if vim.fn.has("wsl") == 1 then
     vim.api.nvim_create_autocmd("TextYankPost", {
