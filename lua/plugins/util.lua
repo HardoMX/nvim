@@ -41,5 +41,32 @@ return {
                 }
             }
         end
+    },
+    {
+        "stevearc/oil.nvim",
+        opts = {
+            columns = {
+                "icon",
+                "permissions",
+                "size",
+            },
+            watch_for_changes = true,
+            view_options = {
+                show_hidden = true,
+            },
+            float = {
+                padding = 3,
+                max_width = 200,
+                preview_split = "right",
+            }
+        }
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        opts = {
+            filters = {
+                dotfiles = true,
+            }
+        }
     }
 }
