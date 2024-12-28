@@ -63,6 +63,7 @@ return {
     },
     {
         "nvim-tree/nvim-tree.lua",
+        lazy = true,
         opts = {
             filters = {
                 dotfiles = true,
