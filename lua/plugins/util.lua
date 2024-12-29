@@ -69,5 +69,9 @@ return {
                 dotfiles = true,
             }
         }
+    },
+    {
+        "wakatime/vim-wakatime",
+        lazy = false,
     }
 }
