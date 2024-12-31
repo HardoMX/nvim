@@ -11,32 +11,12 @@ return {
         priority = 1000,
     },
     {
-        "sho-87/kanagawa-paper.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
         "catppuccin/nvim",
         lazy = false,
         priority = 1000,
     },
     {
-        "olimorris/onedarkpro.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "scottmckendry/cyberdream.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
         "AlexvZyl/nordic.nvim",
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        "savq/melange-nvim",
         lazy = false,
         priority = 1000,
     },
