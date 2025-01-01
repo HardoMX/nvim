@@ -1,7 +1,7 @@
 return {
     {
         "ThePrimeagen/refactoring.nvim",
-        lazy = false,
+        lazy = true,
         opts = {
             prompt_func_return_type = {
                 go = true,

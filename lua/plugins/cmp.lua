@@ -31,7 +31,7 @@ return {
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                     { name = "nvim_lua" },
-                    -- Currenty broken: { name = "nvim-html-css" },
+                    -- Currently broken: { name = "nvim-html-css" },
                 }, {
                     { name = "buffer" }
                 }),
@@ -65,6 +65,7 @@ return {
                             luasnip = "[LuaSnip]",
                             nvim_lua = "[Lua]",
                             path = "[Path]",
+                            nvim_px_to_rem = "[px_rem]",
                         })
                     })
                 },

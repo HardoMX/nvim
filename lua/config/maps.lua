@@ -1,22 +1,32 @@
 local wk = require("which-key")
 
 -- Mappings for basic usage
+local oil = require("oil")
+local tree = require("nvim-tree.api")
 wk.add({
     { "<leader>c",  group = "Config" },
     { "<leader>cl", vim.cmd.Lazy,               desc = "Open Lazy.nvim control panel" },
     { "<leader>cm", vim.cmd.Mason,              desc = "Open Mason control panel" },
     { "<leader>R",  vim.cmd.RegexplainerToggle, desc = "Toggle regexplainer popup" },
-    { "<leader>U",  vim.cmd.UndotreeToggle,     desc = "Toggle undotree" }
+    { "<leader>U",  vim.cmd.UndotreeToggle,     desc = "Toggle undotree" },
+    { "<leader>o",  oil.toggle_float,           desc = "Toggle floating oil" },
+    { "<leader>O",  oil.open,                   desc = "Open Oil buffer" },
+    { "<leader>T",  tree.tree.toggle,           desc = "Open file tree" }
 })
 
 -- Mappings for buffer and window management
 wk.add({
     { "<leader>w",   group = "Buffers and windows" },
-    { "<leader>n",   "<C-w>w",                     desc = "Go to next window" },
-    { "<leader>p",   "<C-w>W",                     desc = "Go to previous window" },
+    { "<leader>n",   "<C-w>w",                            desc = "Go to next window" },
+    { "<leader>p",   "<C-w>W",                            desc = "Go to previous window" },
+    { "<leader>wS",  "<C-w><C-r>",                        desc = "Switch window places/rotate windows right" },
+    { "<leader>wm",  vim.cmd.WindowsMaximize,             desc = "Maximize window toggle" },
+    { "<leader>wv",  vim.cmd.WindowsMaximizeVertically,   desc = "Maximize window vertically" },
+    { "<leader>wh",  vim.cmd.WindowsMaximizeHorizontally, desc = "Maximize window horizontally" },
+    { "<leader>we",  vim.cmd.WindowsEqualize,             desc = "Equalize windows" },
     { "<leader>ws",  group = "Split view" },
-    { "<leader>wsh", vim.cmd.split,                desc = "Split view horizontally" },
-    { "<leader>wsv", vim.cmd.vsplit,               desc = "Split view vertically" }
+    { "<leader>wsh", vim.cmd.split,                       desc = "Split view horizontally" },
+    { "<leader>wsv", vim.cmd.vsplit,                      desc = "Split view vertically" }
 })
 -- Add mapping for easily switching windows
 for i = 1, 6 do
@@ -32,17 +42,16 @@ local telescope = require("telescope.builtin")
 local customtele = require("config.telescope")
 wk.add({
     { "<leader>f",  group = "Find" },
-    { "<leader>ff", telescope.find_files,                                                       desc = "Find files" },
-    { "<leader>fw", telescope.live_grep,                                                        desc = "Find words in files" },
-    { "<leader>fb", telescope.buffers,                                                          desc = "Find buffers" },
-    { "<leader>fg", telescope.git_files,                                                        desc = "Find files not excluded by .gitignore" },
-    { "<leader>fc", telescope.colorscheme,                                                      desc = "Choose from available colorschemes" },
-    { "<leader>fs", telescope.spell_suggest,                                                    desc = "See spelling suggestions" },
-    { "<leader>fq", telescope.quickfix,                                                         desc = "See available quickfixes" },
-    { "<leader>fe", function() telescope.find_files({ cwd = vim.fn.stdpath("config") }) end,    desc = "Open nvim config folder" },
-    { "<leader>ft", function() require("telescope").extensions.file_browser.file_browser() end, desc = "Open file browser" },
-    { "<leader>fz", customtele.live_multigrep,                                                  desc = "Open file browser with filtering" },
-    { "<leader>fp", telescope.planets,                                                          desc = "Use the telescope..." },
+    { "<leader>ff", telescope.find_files,                                                    desc = "Find files" },
+    { "<leader>fw", telescope.live_grep,                                                     desc = "Find words in files" },
+    { "<leader>fb", telescope.buffers,                                                       desc = "Find buffers" },
+    { "<leader>fg", telescope.git_files,                                                     desc = "Find files not excluded by .gitignore" },
+    { "<leader>fc", telescope.colorscheme,                                                   desc = "Choose from available colorschemes" },
+    { "<leader>fs", telescope.spell_suggest,                                                 desc = "See spelling suggestions" },
+    { "<leader>fq", telescope.quickfix,                                                      desc = "See available quickfixes" },
+    { "<leader>fe", function() telescope.find_files({ cwd = vim.fn.stdpath("config") }) end, desc = "Open nvim config folder" },
+    { "<leader>fz", customtele.live_multigrep,                                               desc = "Open file browser with filtering" },
+    { "<leader>fp", telescope.planets,                                                       desc = "Use the telescope..." },
 })
 
 -- Mappings for Harpoon
