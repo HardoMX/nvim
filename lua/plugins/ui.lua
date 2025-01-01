@@ -46,12 +46,6 @@ return {
         }
     },
     {
-        "goolord/alpha-nvim",
-        config = function()
-            require("alpha").setup(require("alpha.themes.dashboard").config)
-        end
-    },
-    {
         "folke/drop.nvim",
         event = "UIEnter",
         opts = {
@@ -66,8 +60,8 @@ return {
                 { theme = "spring",         from = { month = 3, day = 1 },   to = { month = 5, day = 31 } },
                 { theme = "summer",         from = { month = 6, day = 1 },   to = { month = 9, day = 14 } }
             },
-            screensaver = 1000 * 60 * 5,
-            interval = 180
+            interval = 180,
+            filetypes = { "snacks_dashboard" } -- INFO: Doesn't work
         }
     },
     {
