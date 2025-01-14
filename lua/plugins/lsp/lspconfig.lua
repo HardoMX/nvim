@@ -29,6 +29,19 @@ return {
                 end,
             })
 
+            vim.diagnostic.config({
+                virtual_text = false,
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = signs.Error,
+                        [vim.diagnostic.severity.WARN] = signs.Warn,
+                        [vim.diagnostic.severity.INFO] = signs.Info,
+                        [vim.diagnostic.severity.HINT] = signs.Hint,
+                    }
+                },
+                underline = true,
+            })
+
             lsp.lua_ls.setup { capabilities = capab }
             lsp.bashls.setup { capabilities = capab }
             lsp.clangd.setup { capabilities = capab }
@@ -72,6 +85,23 @@ return {
         "folke/trouble.nvim",
         lazy = true,
         cmd = "Trouble"
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy",
+        priority = 1000,
+        opts = {
+            options = {
+                use_icons_from_diagnostic = true,
+                multiple_diag_under_cursor = true,
+                multilines = {
+                    enabled = true,
+                    always_show = true,
+                },
+                add_messages = false,
+                show_all_dags_on_cursorline = true,
+            }
+        }
     },
     {
         "dnlhc/glance.nvim",
