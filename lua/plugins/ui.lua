@@ -114,10 +114,23 @@ return {
     },
     {
         "anuvyklack/windows.nvim",
+        event = { "BufAdd", "WinNew" },
         dependencies = {
             "anuvyklack/middleclass",
             "anuvyklack/animation.nvim"
         },
         opts = {},
+    },
+    {
+        "rachartier/tiny-glimmer.nvim",
+        event = "TextYankPost",
+        opts = {
+            animations = {
+                fade = {
+                    max_duration = 500,
+                    chars_for_max_duration = 15,
+                }
+            }
+        }
     },
 }
