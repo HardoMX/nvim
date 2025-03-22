@@ -100,7 +100,7 @@ return {
         event = "UIEnter",
     },
     {
-        "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+        "HiPhish/rainbow-delimiters.nvim",
         event = "UIEnter",
     },
     {
