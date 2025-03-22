@@ -100,7 +100,7 @@ return {
         event = "UIEnter",
     },
     {
-        "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+        "HiPhish/rainbow-delimiters.nvim",
         event = "UIEnter",
     },
     {
@@ -114,10 +114,33 @@ return {
     },
     {
         "anuvyklack/windows.nvim",
+        event = { "BufAdd", "WinNew" },
         dependencies = {
             "anuvyklack/middleclass",
             "anuvyklack/animation.nvim"
         },
         opts = {},
+    },
+    {
+        "rachartier/tiny-glimmer.nvim",
+        event = "TextYankPost",
+        opts = {
+            animations = {
+                fade = {
+                    max_duration = 500,
+                    chars_for_max_duration = 15,
+                }
+            }
+        }
+    },
+    {
+        "rktjmp/lush.nvim",
+    },
+    {
+        "jinh0/eyeliner.nvim",
+        opts = {
+            highlight_on_key = true,
+            dim = true,
+        }
     },
 }

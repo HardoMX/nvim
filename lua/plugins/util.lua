@@ -73,5 +73,11 @@ return {
     {
         "wakatime/vim-wakatime",
         lazy = false,
+    },
+    {
+        "Xemptuous/sqlua.nvim",
+        lazy = true,
+        cmd = "SQLua",
+        opts = {}
     }
 }
