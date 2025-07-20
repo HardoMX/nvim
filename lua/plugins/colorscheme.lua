@@ -54,7 +54,7 @@ return {
     },
     {
         "hardomx/soul.nvim",
-        lazu = false,
+        lazy = false,
         priority = 1000,
     },
 }
