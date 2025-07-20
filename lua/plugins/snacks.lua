@@ -10,6 +10,8 @@ return {
         bigfile = { enabled = true },
         profiler = { enabled = true },
         rename = { enabled = true },
+        image = { enabled = true },
+        picker = { enabled = true },
         dashboard = {
             enabled = true,
             sections = {

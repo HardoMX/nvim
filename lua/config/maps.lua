@@ -23,7 +23,21 @@ wk.add({
     { "<leader>Ph", function() snacks.toggle.profiler_highlights() end, desc = "" },
     { "<leader>Ps", function() snacks.profiler.scratch() end,           desc = "Open profiler scratch buffer" },
     { "<leader>Pf", function() snacks.profiler.pick() end,              desc = "Group and filter traces" },
-    { "<leader>Pr", function() snacks.profiler.running() end,           desc = "See if the profiler is running" }
+    { "<leader>Pr", function() snacks.profiler.running() end,           desc = "See if the profiler is running" },
+    { "<leader>F",  group = "Snacks picker" },
+    { "<leader>FF", function() snacks.picker.smart() end,               desc = "Snacks smart find" },
+    { "<leader>FB", function() snacks.picker.buffers() end,             desc = "Snacks buffers find" },
+    { "<leader>FG", function() snacks.picker.grep() end,                desc = "Snacks grep" },
+    { "<leader>F:", function() snacks.picker.command_history() end,     desc = "Command history" },
+    { "<leader>FN", function() snacks.picker.notifications() end,       desc = "Notification history" },
+    { "<leader>FE", function() snacks.picker.explorer() end,            desc = "File explorer" },
+    { "<leader>FL", function() snacks.picker.files() end,               desc = "Find Files" },
+    { "<leader>FC", function() snacks.picker.colorschemes() end,        desc = "Find colorschemes" },
+    { "<leader>FH", function() snacks.picker.help() end,                desc = "Find help" },
+    { "<leader>FQ", function() snacks.picker.qflist() end,              desc = "Find in quickfix list" },
+    { "<leader>FR", function() snacks.picker.recent() end,              desc = "Find recent files" },
+    { "<leader>FS", function() snacks.picker.spelling() end,            desc = "Spelling" },
+    { "<leader>Ih", function() snacks.image.hover() end,                desc = "Show image under cursor" },
 })
 
 -- Mappings for buffer and window management
