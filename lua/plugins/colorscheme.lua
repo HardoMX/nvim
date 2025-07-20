@@ -52,4 +52,9 @@ return {
         lazy = false,
         priority = 1000,
     },
+    {
+        "hardomx/soul.nvim",
+        lazy = false,
+        priority = 1000,
+    },
 }
