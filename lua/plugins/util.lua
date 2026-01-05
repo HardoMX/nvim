@@ -62,6 +62,10 @@ return {
         }
     },
     {
+        "benomahony/oil-git.nvim",
+        dependencies = { "stevearc/oil.nvim" },
+    },
+    {
         "nvim-tree/nvim-tree.lua",
         lazy = true,
         opts = {
@@ -69,10 +73,6 @@ return {
                 dotfiles = true,
             }
         }
-    },
-    {
-        "wakatime/vim-wakatime",
-        lazy = false,
     },
     {
         "Xemptuous/sqlua.nvim",

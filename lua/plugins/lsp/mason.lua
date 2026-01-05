@@ -16,19 +16,25 @@ return {
         "williamboman/mason-lspconfig.nvim",
         -- lazy = true,
         opts = {
-            -- Change these as you like. I do a lot of varied stuff, so have a lot of "necessary" LSPs
+            -- Change these as you like. I do a lot of varied stuff, so have a lot of "necessary" LSPs.
+            -- These are automatically enabled, thus enabling through config/lsp.lua is not strictly necessary
             ensure_installed = {
+                -- "Necessary" languages
                 "lua_ls",
                 "bashls",
                 "clangd",
                 "pylsp",
                 "vimls",
                 "gopls",
+                "html",
+                "cssls",
+                "yamlls",
+                -- Extra languages (Change as needed)
                 "ansiblels",
                 "terraformls",
-                "html",
                 "marksman",
-                "yamlls"
+                "css_variables",
+                "cssmodules_ls",
             }
         },
     },
