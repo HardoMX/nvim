@@ -3,74 +3,19 @@ return {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
-            local lsp = require("lspconfig")
-            local capab = require("cmp_nvim_lsp").default_capabilities()
+            local lspconfig = require("lspconfig")
 
-            local signs = { Error = "", Warn = "⚠", Hint = "🗲", Info = "󰋽" }
-            for type, icon in pairs(signs) do
-                local hl = "DiagnosticSign" .. type
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-            end
-
-
-            vim.api.nvim_create_autocmd('LspAttach', {
-                callback = function(args)
-                    local client = vim.lsp.get_client_by_id(args.data.client_id)
-                    if not client then return end
-
-                    if vim.fn.expand('%') ~= "keymap.c" then -- Remove autoformatting for qmk-keymap file
-                        if client.supports_method("textDocument/formatting", 0) then
-                            vim.api.nvim_create_autocmd("BufWritePre", {
-                                buffer = args.buf,
-                                callback = function()
-                                    vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-                                end
-                            })
-                        end
-                    end
-                end,
-            })
-
-            vim.diagnostic.config({
-                virtual_text = false,
-                signs = {
-                    text = {
-                        [vim.diagnostic.severity.ERROR] = signs.Error,
-                        [vim.diagnostic.severity.WARN] = signs.Warn,
-                        [vim.diagnostic.severity.INFO] = signs.Info,
-                        [vim.diagnostic.severity.HINT] = signs.Hint,
-                    }
-                },
-                underline = true,
-            })
-
-            lsp.lua_ls.setup { capabilities = capab }
-            lsp.bashls.setup { capabilities = capab }
-            lsp.clangd.setup { capabilities = capab }
-            lsp.pylsp.setup {
-                capabilities = capab,
-                settings = {
-                    pylsp = {
-                        plugins = {
-                            pycodestyle = {
-                                maxLineLength = 100,
-                                indentSize = 4
-                            },
-                            pydocstyle = {
-                                enabled = true,
-                                convention = "google"
-                            }
-                        }
-                    }
+            lspconfig.util.default_config = vim.tbl_extend(
+                'force',
+                lspconfig.util.default_config,
+                {
+                    capabilities = vim.tbl_deep_extend(
+                        'force',
+                        vim.lsp.protocol.make_client_capabilities(),
+                        require("lsp-file-operations").default_capabilities()
+                    )
                 }
-            }
-            lsp.vimls.setup { capabilities = capab }
-            lsp.gopls.setup { capabilities = capab }
-            lsp.ansiblels.setup { capabilities = capab }
-            lsp.terraformls.setup { capabilities = capab }
-            lsp.html.setup { capabilities = capab }
-            lsp.marksman.setup { capabilities = capab }
-            lsp.yamlls.setup { capabilities = capab }
+            )
         end
     },
     {
