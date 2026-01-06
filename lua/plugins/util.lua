@@ -66,18 +66,14 @@ return {
         dependencies = { "stevearc/oil.nvim" },
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        lazy = true,
-        opts = {
-            filters = {
-                dotfiles = true,
-            }
-        }
-    },
-    {
         "Xemptuous/sqlua.nvim",
         lazy = true,
         cmd = "SQLua",
         opts = {}
-    }
+    },
+    {
+        "hat0uma/csvview.nvim",
+        lazy = true,
+        opts = {}
+    },
 }
