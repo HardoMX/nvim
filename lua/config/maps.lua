@@ -2,7 +2,6 @@ local wk = require("which-key")
 
 -- Mappings for basic usage
 local oil = require("oil")
-local tree = require("nvim-tree.api")
 wk.add({
     { "<leader>c",  group = "Config" },
     { "<leader>cl", vim.cmd.Lazy,               desc = "Open Lazy.nvim control panel" },
@@ -11,7 +10,6 @@ wk.add({
     { "<leader>U",  vim.cmd.UndotreeToggle,     desc = "Toggle undotree" },
     { "<leader>o",  oil.toggle_float,           desc = "Toggle floating oil" },
     { "<leader>O",  oil.open,                   desc = "Open Oil buffer" },
-    { "<leader>T",  tree.tree.toggle,           desc = "Open file tree" }
 })
 
 -- Mappings for Snacks
@@ -24,29 +22,29 @@ wk.add({
     { "<leader>Ps",  function() snacks.profiler.scratch() end,           desc = "Open profiler scratch buffer" },
     { "<leader>Pf",  function() snacks.profiler.pick() end,              desc = "Group and filter traces" },
     { "<leader>Pr",  function() snacks.profiler.running() end,           desc = "See if the profiler is running" },
-    { "<leader>F",   group = "Snacks picker" },
-    { "<leader>FF",  function() snacks.picker.smart() end,               desc = "Snacks smart find" },
-    { "<leader>FB",  function() snacks.picker.buffers() end,             desc = "Snacks buffers find" },
-    { "<leader>Fg",  function() snacks.picker.grep() end,                desc = "Snacks grep" },
-    { "<leader>F:",  function() snacks.picker.command_history() end,     desc = "Command history" },
-    { "<leader>FN",  function() snacks.picker.notifications() end,       desc = "Notification history" },
-    { "<leader>FE",  function() snacks.picker.explorer() end,            desc = "Snacks file explorer" },
-    { "<leader>FL",  function() snacks.picker.files() end,               desc = "Find files" },
-    { "<leader>FC",  function() snacks.picker.colorschemes() end,        desc = "Find colorschemes" },
-    { "<leader>FH",  function() snacks.picker.help() end,                desc = "Find help" },
-    { "<leader>FQ",  function() snacks.picker.qflist() end,              desc = "Fin in quickfix list" },
-    { "<leader>FR",  function() snacks.picker.recent() end,              desc = "Find recent files" },
-    { "<leader>FS",  function() snacks.picker.spelling() end,            desc = "Spelling" },
-    { "<leader>FP",  function() snacks.picker.cliphist() end,            desc = "Cliphist list" },
-    { "<leader>FD",  function() snacks.picker.diagnostics() end,         desc = "Find diagnostics" },
+    { "<leader>f",   group = "Snacks picker" },
+    { "<leader>ff",  function() snacks.picker.smart() end,               desc = "Snacks smart find" },
+    { "<leader>fb",  function() snacks.picker.buffers() end,             desc = "Snacks buffers find" },
+    { "<leader>fz",  function() snacks.picker.grep() end,                desc = "Snacks grep" },
+    { "<leader>f:",  function() snacks.picker.command_history() end,     desc = "Command history" },
+    { "<leader>fn",  function() snacks.picker.notifications() end,       desc = "Notification history" },
+    { "<leader>fe",  function() snacks.picker.explorer() end,            desc = "Snacks file explorer" },
+    { "<leader>fl",  function() snacks.picker.files() end,               desc = "Find files" },
+    { "<leader>fc",  function() snacks.picker.colorschemes() end,        desc = "Find colorschemes" },
+    { "<leader>fh",  function() snacks.picker.help() end,                desc = "Find help" },
+    { "<leader>fq",  function() snacks.picker.qflist() end,              desc = "Fin in quickfix list" },
+    { "<leader>fr",  function() snacks.picker.recent() end,              desc = "Find recent files" },
+    { "<leader>fs",  function() snacks.picker.spelling() end,            desc = "Spelling" },
+    { "<leader>fp",  function() snacks.picker.cliphist() end,            desc = "Cliphist list" },
+    { "<leader>fd",  function() snacks.picker.diagnostics() end,         desc = "Find diagnostics" },
     -- { "<leader>FT", function() snacks.picker.todo_comments({ keywords = { "TODO", "Todo", "todo" } }) end, desc = "Find todo comments" }, TODO: fix todo find
-    { "<leader>FG",  group = "Snacks Git actions", },
-    { "<leader>FGb", function() snacks.picker.git_branches() end,        desc = "Git branches" },
-    { "<leader>FGd", function() snacks.picker.git_diff() end,            desc = "Git diff" },
-    { "<leader>FGf", function() snacks.picker.git_files() end,           desc = "Git files" },
-    { "<leader>FGs", function() snacks.picker.git_status() end,          desc = "Git status" },
-    { "<leader>FGg", function() snacks.picker.git_grep() end,            desc = "Grep git files" },
-    { "<leader>Ih",  function() snacks.image.hover() end,                desc = "Show image under cursor" },
+    { "<leader>fg",  group = "Snacks Git actions", },
+    { "<leader>fgb", function() snacks.picker.git_branches() end,        desc = "Git branches" },
+    { "<leader>fgd", function() snacks.picker.git_diff() end,            desc = "Git diff" },
+    { "<leader>fgf", function() snacks.picker.git_files() end,           desc = "Git files" },
+    { "<leader>fgs", function() snacks.picker.git_status() end,          desc = "Git status" },
+    { "<leader>fgg", function() snacks.picker.git_grep() end,            desc = "Grep git files" },
+    { "<leader>IH",  function() snacks.image.hover() end,                desc = "Show image under cursor" },
 })
 
 -- Mappings for buffer and window management
@@ -74,19 +72,10 @@ end
 
 -- Mappings for Telescope
 local telescope = require("telescope.builtin")
-local customtele = require("config.telescope")
 wk.add({
-    { "<leader>f",  group = "Find" },
-    { "<leader>ff", telescope.find_files,                                                    desc = "Find files" },
-    { "<leader>fw", telescope.live_grep,                                                     desc = "Find words in files" },
-    { "<leader>fb", telescope.buffers,                                                       desc = "Find buffers" },
-    { "<leader>fg", telescope.git_files,                                                     desc = "Find files not excluded by .gitignore" },
-    { "<leader>fc", telescope.colorscheme,                                                   desc = "Choose from available colorschemes" },
-    { "<leader>fs", telescope.spell_suggest,                                                 desc = "See spelling suggestions" },
-    { "<leader>fq", telescope.quickfix,                                                      desc = "See available quickfixes" },
-    { "<leader>fe", function() telescope.find_files({ cwd = vim.fn.stdpath("config") }) end, desc = "Open nvim config folder" },
-    { "<leader>fz", customtele.live_multigrep,                                               desc = "Open file browser with filtering" },
-    { "<leader>fp", telescope.planets,                                                       desc = "Use the telescope..." },
+    { "<leader>T",  group = "Find" },
+    { "<leader>Te", function() telescope.find_files({ cwd = vim.fn.stdpath("config") }) end, desc = "Open nvim config folder" },
+    { "<leader>Tp", telescope.planets,                                                       desc = "Use the telescope..." },
 })
 
 -- Mappings for Harpoon
