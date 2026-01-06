@@ -178,3 +178,10 @@ wk.add({
     { "g<C-a>", function() dial.manipulate("increment", "gvisual") end, mode = "v" },
     { "g<C-x>", function() dial.manipulate("decrement", "gvisual") end, mode = "v" },
 })
+
+
+-- Mappings for CSV view
+local csv = require("csvview")
+wk.add({
+    { "<leader>C", function() csv.toggle(vim.fn.bufnr(), { view = { display_mode = "border", header_lnum = 1 } }) end, desc = "Toggle CSV view" },
+})

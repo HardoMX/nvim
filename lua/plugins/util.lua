@@ -70,5 +70,10 @@ return {
         lazy = true,
         cmd = "SQLua",
         opts = {}
-    }
+    },
+    {
+        "hat0uma/csvview.nvim",
+        lazy = true,
+        opts = {}
+    },
 }
