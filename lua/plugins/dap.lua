@@ -10,7 +10,7 @@ return {
             require("nvim-dap-virtual-text").setup()
             require("nvim-dap-repl-highlights").setup()
 
-            require("nvim-treesitter.configs").setup({
+            require("nvim-treesitter.config").setup({
                 ensure_installed = { "dap_repl" }
             })
 
