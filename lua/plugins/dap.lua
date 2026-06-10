@@ -16,25 +16,28 @@ return {
 
 
             -- To avoid nvim-dap-mason taking up a lot of unnecessary startup time, I write my own function
-            local ensure_installed = {
-                "delve",
-                "cpptools",
-                "js-debug-adapter",
-                "bash-debug-adapter",
-                "debugpy",
-                "firefox-debug-adapter"
-            }
-            -- local Package = require("mason-core.package")
-            local installPath = vim.fn.stdpath("data") .. "/mason/packages/"
-            for install = 1, #ensure_installed do
-                -- if Package:is_installed(ensure_installed[install]) then
-                --     vim.notify(ensure_installed[install] .. " not installed, installing")
-                --     Package:install(ensure_installed[install])
-                -- end
-                if vim.fn.isdirectory(installPath .. ensure_installed[install]) == 0 then
-                    vim.notify(ensure_installed[install] .. " is not installed, installing")
-                    vim.notify("(" .. installPath .. ensure_installed[install] .. ")")
-                    vim.cmd.MasonInstall(ensure_installed[install])
+            -- If the config is run within one of my nvim-containers, don't install DAPs automatically
+            if not os.getenv("container") == "true" then
+                local ensure_installed = {
+                    "delve",
+                    "cpptools",
+                    "js-debug-adapter",
+                    "bash-debug-adapter",
+                    "debugpy",
+                    "firefox-debug-adapter"
+                }
+                -- local Package = require("mason-core.package")
+                local installPath = vim.fn.stdpath("data") .. "/mason/packages/"
+                for install = 1, #ensure_installed do
+                    -- if Package:is_installed(ensure_installed[install]) then
+                    --     vim.notify(ensure_installed[install] .. " not installed, installing")
+                    --     Package:install(ensure_installed[install])
+                    -- end
+                    if vim.fn.isdirectory(installPath .. ensure_installed[install]) == 0 then
+                        vim.notify(ensure_installed[install] .. " is not installed, installing")
+                        vim.notify("(" .. installPath .. ensure_installed[install] .. ")")
+                        vim.cmd.MasonInstall(ensure_installed[install])
+                    end
                 end
             end
 
