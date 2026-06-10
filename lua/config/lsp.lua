@@ -7,7 +7,7 @@ vim.lsp.enable("gopls")
 vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 vim.lsp.enable("yamlls")
-vim.lsp.enable("amsiblels")
+vim.lsp.enable("ansiblels")
 vim.lsp.enable("marksman")
 vim.lsp.enable("css_variables")
 vim.lsp.enable("cssmodules_ls")
@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         if not client then return end
 
         if vim.fn.expand('%') ~= "keymap.c" then -- Remove autoformatting for qmk-keymap file
-            if client.supports_method("textDocument/formatting", 0) then
+            if client:supports_method("textDocument/formatting", 0) then
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = args.buf,
                     callback = function()

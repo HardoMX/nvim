@@ -4,12 +4,6 @@ return {
         branch = "main",
         lazy = false,
         build = ":TSUpdate",
-        keys = {
-            { "gnn", desc = "Init selection" },
-            { "grn", desc = "Increment node" },
-            { "grc", desc = "Increment scope" },
-            { "grm", desc = "Decrement node" },
-        },
         config = function()
             require("nvim-treesitter").install({
                 "c",
