@@ -2,6 +2,9 @@ return {
     {
         "ThePrimeagen/refactoring.nvim",
         lazy = true,
+        dependencies = {
+            "lewis6991/async.nvim",
+        },
         opts = {
             prompt_func_return_type = {
                 go = true,

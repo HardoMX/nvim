@@ -86,7 +86,7 @@ return {
     },
     {
         "jsongerber/nvim-px-to-rem",
-        lazy = true,
+        event = "UIEnter",
         opts = {
             add_cmp_source = true,
         }
