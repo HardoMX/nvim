@@ -6,7 +6,7 @@ A balanced and reliable config, usually kept up to date with lates Neovim stable
 **Using Arch linux**
 ```
 # Install Neovim and required programs
-sudo pacman -S neovim unzip wget curl tar gzip ripgrep find-fd
+sudo pacman -S neovim unzip wget curl tar gzip ripgrep find-fd tree-sitter-cli
 
 # Install package managers for LSP installation
 sudo pacman -S npm python-pip

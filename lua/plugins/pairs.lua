@@ -43,10 +43,5 @@ return {
     {
         "RRethy/nvim-treesitter-endwise",
         event = "InsertEnter",
-        config = function()
-            require("nvim-treesitter.config").setup({
-                endwise = { enable = true }
-            })
-        end
     }
 }

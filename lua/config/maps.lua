@@ -91,9 +91,44 @@ wk.add({
 
 -- Most mappings for CMP can be found in lua/plugins/cmp.lua
 wk.add({
-    { "<leader>px",  group = "px to rem" },
-    { "<leader>pxc", function() vim.cmd.PxToRemCursor() end, desc = "Convert px under cursor to rem" },
-    { "<leader>pxl", function() vim.cmd.PxToRemLine() end,   desc = "Convert px on line to rem" }
+    { "<leader>x",  group = "px to rem" },
+    { "<leader>xc", function() vim.cmd.PxToRemCursor() end, desc = "Convert px under cursor to rem" },
+    { "<leader>xl", function() vim.cmd.PxToRemLine() end,   desc = "Convert px on line to rem" }
+})
+
+-- Mappings for Treesitter textobjects
+local tsto = require("nvim-treesitter-textobjects")
+wk.add({
+    { "<leader>s",   group = "textobjects select" },
+    { "<leader>sof", function() tsto.select.select_textobjects("@function.outer", "textobjects") end, desc = "Select outer part of function" },
+    { "<leader>sif", function() tsto.select.select_textobjects("@function.inner", "textobjects") end, desc = "Select inner part of function" },
+    { "<leader>soc", function() tsto.select.select_textobjects("@class.outer", "textobjects") end,    desc = "Select outer part of class" },
+    { "<leader>sic", function() tsto.select.select_textobjects("@class.inner", "textobjects") end,    desc = "Select inner part of class" },
+    { "<leader>sob", function() tsto.select.select_textobjects("@block.outer", "textobjects") end,    desc = "Select outer part of block" },
+    { "<leader>sib", function() tsto.select.select_textobjects("@block.inner", "textobjects") end,    desc = "Select inner part of block" },
+    { "<leader>sol", function() tsto.select.select_textobjects("@loop.outer", "textobjects") end,     desc = "Select outer part of loop" },
+    { "<leader>sil", function() tsto.select.select_textobjects("@loop.inner", "textobjects") end,     desc = "Select inner part of loop" },
+    { "<leader>Sn",  group = "textobjects swap next" },
+    { "<leader>Snf", function() tsto.swap.swap_next("@function.outer") end,                           desc = "Swap with next function" },
+    { "<leader>Snc", function() tsto.swap.swap_next("@class.outer") end,                              desc = "Swap with next class" },
+    { "<leader>Snp", function() tsto.swap.swap_next("@parameter.inner") end,                          desc = "Swap with next parameter" },
+    { "<leader>Snl", function() tsto.swap.swap_next("@loop.outer") end,                               desc = "Swap with next loop" },
+    { "<leader>Snb", function() tsto.swap.swap_next("@block.outer") end,                              desc = "Swap with next block" },
+    { "<leader>Sp",  group = "textobjects swap previous" },
+    { "<leader>Spf", function() tsto.swap.swap_previous("@function.outer") end,                       desc = "Swap with previous function" },
+    { "<leader>Spc", function() tsto.swap.swap_previous("@class.outer") end,                          desc = "Swap with previous class" },
+    { "<leader>Spp", function() tsto.swap.swap_previous("@parameter.inner") end,                      desc = "Swap with previous parameter" },
+    { "<leader>Spl", function() tsto.swap.swap_previous("@loop.outer") end,                           desc = "Swap with previous loop" },
+    { "<leader>Spb", function() tsto.swap.swap_previous("@block.outer") end,                          desc = "Swap with previous block" },
+    { "g",           group = "textobjects move" },
+    { "gnf",         function() tsto.move.goto_next_start("@function.outer") end,                     desc = "Go to next function start" },
+    { "gnc",         function() tsto.move.goto_next_start("@class.outer") end,                        desc = "Go to next class start" },
+    { "gnl",         function() tsto.move.goto_next_start("@loop.outer") end,                         desc = "Go to next loop start" },
+    { "gnb",         function() tsto.move.goto_next_start("@block.outer") end,                        desc = "Go to next block start" },
+    { "gpf",         function() tsto.move.goto_previous_start("@function.outer") end,                 desc = "Go to previous function start" },
+    { "gpc",         function() tsto.move.goto_previous_start("@class.outer") end,                    desc = "Go to previous class start" },
+    { "gpl",         function() tsto.move.goto_previous_start("@loop.outer") end,                     desc = "Go to previous loop start" },
+    { "gpb",         function() tsto.move.goto_previous_start("@block.outer") end,                    desc = "Go to previous block start" },
 })
 
 -- Mappings for LSP
